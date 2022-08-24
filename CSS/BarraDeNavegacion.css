@@ -1,0 +1,39 @@
+.header{
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+}
+.header a{
+    color:white;
+    text-decoration: none;/*Quitar subrayado*/
+}
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;/*para que se baya uno a la izq y otro a la derecha si son flex*/
+    align-items: center;
+}
+.navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li{
+    display: inline-block;
+}
+
+.navigation ul li a{
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+
+.navigation ul li a:hover{
+    background-color: rgb(77, 71, 71);
+}
