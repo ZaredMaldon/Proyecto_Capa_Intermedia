@@ -8,12 +8,12 @@
     <title>Nombre de Página</title>
 
     <!-- CSS only -->
-    <link rel="stylesheet" href="CSS/Normalize.css">
+    <link rel="stylesheet" href="../CSS/Normalize.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/PaginaGeneral.css">
-    <link rel="stylesheet" href="CSS/BarraDeNavegacion.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <link rel="stylesheet" href="../CSS/PaginaGeneral.css">
+    <link rel="stylesheet" href="../CSS/BarraDeNavegacion.css">
+    <link rel="stylesheet" href="../CSS/Footer.css">
 
 
 </head>
@@ -24,7 +24,7 @@
             <a href="#" class="logo">LOGO</a>
 
             <div class="menu_bar">
-                <a href="#" class="btn bt-menu"><span><img src="images/menu.svg" alt="">Menu</span> </a>
+                <a href="#" class="btn bt-menu"><span><img src="../images/menu.svg" alt="">Menu</span> </a>
             </div>
 
             <nav class="navigation">
@@ -42,103 +42,24 @@
     </header>
 
     <main class="main">
-        <div class="textos">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
-                necessitatibus
-                voluptatem, laborum vel cumque quas fugiat, praesentium placeat inventore similique aliquid? Deserunt
-                vel
-                amet quia ab!</p>
-        </div>
-
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
     </main>
 
 
     <dialog class="modalg" id="modal">
         <form method="dialog">
             <div class="form-group">
-                <img src="images/logo temporal.PNG" alt="Logotipo">
+                <img src="../images/logo temporal.PNG" alt="Logotipo">
                 <h1 id="NombrePagina_id">Nombre</h1>                
             </div>
             <input type="text" placeholder="Usuario">
             <input type="text" placeholder="Contraseña">
             <small id="Recomendation" class="form-text text-muted">Inicia sesión para que puedas seguir comprando</small>
             <button class="btn btn-dark" type="submit">Login</button>
-            <small id="Registrate" class="form-text text-muted">¿No tienes cuenta?<a href="view/Registro.php"> Registrate</a></small>
+            <small id="Registrate" class="form-text text-muted">¿No tienes cuenta?<a href="../view/Registro.php"> Registrate</a></small>
             <button class="btn btn-dark" id="CerrarModal-btn"> Cerrar</button>
         </form>
         
@@ -277,11 +198,11 @@
     </footer>
 
     <!-- JavaScript-->
-    <script src="Script/jquery.js"></script>
+    <script src="../Script/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
-    <script src="Script/ModalLogin.js"></script>
+    <script src="../Script/ModalLogin.js"></script>
 </body>
 
 </html>
