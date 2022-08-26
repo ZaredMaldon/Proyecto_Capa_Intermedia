@@ -42,10 +42,35 @@
     </header>
 
     <main class="main">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero molestias dolorum excepturi nostrum voluptatem illum repellendus ab, maxime optio voluptates a mollitia nesciunt omnis eius quia commodi. Nihil, saepe suscipit.</p>
+        <div class="container Registro">
+            <form id="Form-Register">
+
+                <div class="form-group DatosPersonales">
+                    <input type="text" placeholder="Nombres">
+                    <input type="text" placeholder="Apellido Paterno">
+                    <input type="text" placeholder="Apellido Materno">
+                    <input type="tel" placeholder="Teléfono">
+                    <input type="date" placeholder="Fecha de Nacimiento" max="2004/12/31" min="1900/01/01"><br>             
+                    <input type="radio" name="gender" value="male" checked> Hombre<br>
+                    <input type="radio" name="gender" value="female"> Mujer<br>
+                    <input type="radio" name="gender" value="other"> Otro<br>
+                </div>
+                
+                <div class="form-group Usuario">
+                    <input type="text" placeholder="Usuario">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Contraseña"><br>
+                    <p>Selecciona una imagen:</p> <input type="file" name="myFile">
+
+                    <p>Tipo de Usuario:</p>
+                    <select name="select">
+                    <option value="value1">Público</option>
+                    <option value="value2">Privado</option>
+                    </select>
+                </div>
+                
+            </form>
+        </div>
     </main>
 
 
