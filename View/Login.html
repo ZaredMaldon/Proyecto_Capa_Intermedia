@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <form class="formulario">
+    <form action="../Model/Login.php" method="post" class="formulario">
 
         <h1>Login</h1>
         <div class="contenedor">
@@ -24,16 +24,17 @@
 
             <div class="input-contenedor">
                 <i class="fa fa-user icon"></i>
-                <input type="text" placeholder="Usuario">
+                <input type="text" placeholder="Usuario" name="UsuarioLogin">
 
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña">
+                <input type="password" placeholder="Contraseña" name="PasswordLogin">
 
             </div>
             <input type="submit" value="Login" class="button">
+
             <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
             <p>¿No tienes una cuenta? <a class="link" href="Registro.html">Registrate </a> <a class="link"
                     href="../index.html"> Cerrar</a></p>
