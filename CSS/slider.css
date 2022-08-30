@@ -1,10 +1,10 @@
 :root{
-    --colorPrimario: #565754;
-    --background-Footer-Navbar:#333;
+    --colorPrimario: #8c7761;
+    --background-Footer-Navbar:rgb(92, 76, 57);
 }
 .header{
  
-    background-color: #333;
+    background-color: rgb(137, 103, 77);/*rgb(164, 141, 107);*/
     color: white;
     padding: 2rem 0;
 
@@ -14,7 +14,7 @@
     width: 100%;
 }
 .header a{
-    color:white;
+    color:rgb(255, 219, 180);
     text-decoration: none;/*Quitar subrayado*/
 }
 .logo-nav-container{
@@ -41,7 +41,7 @@
 }
 
 .navigation ul li a:hover{
-    background-color: rgba(161, 210, 76, 0.979);
+    background-color: rgba(161, 131, 94, 0.979);
 }
 
 .menu_bar{
@@ -49,13 +49,13 @@
     
 }
 
-.textos{
+/*.textos{
     position:static;
     padding: 100px;
     border: 30px;
     top:700px;
     
-}
+}*/
 
 /*--PANTALLAS DE 800PX O MENOS--------------------------------------------------------------------------------------------------------------*/
 @media  screen and (max-width:800px) {
@@ -141,3 +141,46 @@
     }
 }
 
+/* -------------------------SLIDER------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.slider{
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+}
+.slider ul{
+    display: flex;
+    animation: cambio 20s infinite alternate linear;
+    width: 400%;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+    
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+    
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+    
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+.slider, .slider ul, .slider img{
+    height: 100vh;
+}
+}

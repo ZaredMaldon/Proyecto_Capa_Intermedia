@@ -12,8 +12,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/PaginaGeneral.css">
-    <link rel="stylesheet" href="CSS/BarraDeNavegacion.css">
-    <link rel="stylesheet" href="CSS/Footer.css">
+    <!-- <link rel="stylesheet" href="CSS/BarraDeNavegacion.css">--> 
+    <link rel="stylesheet" href="CSS/slider.css"> 
+    <link rel="stylesheet" href="CSS/footer2.css">
 
 
 </head>
@@ -21,7 +22,8 @@
 <body>
     <header class="header">
         <div class="container logo-nav-container">
-            <a href="#" class="logo">LOGO</a>
+           <!-- <a href="#" class="logo">LOGO</a> -->
+            <img src="images/NOMBRE.png"  width="170" height="75" alt="Imagen">
 
             <div class="menu_bar">
                 <a href="#" class="btn bt-menu"><span><img src="images/menu.svg" alt="">Menu</span> </a>
@@ -41,6 +43,27 @@
 
     </header>
 
+ <!-- SLIDER PAGINA PRINCIPAL -->
+
+    <div class="slider">
+    <ul>
+        <li>
+            <img src="slider/1.jpg">
+        </li>
+        <li>
+            <img src="slider/2.jpg">
+        </li>
+        <li>
+            <img src="slider/3.jpg">
+        </li>
+        <li>
+            <img src="slider/4.jpg">
+        </li>
+    </ul>
+  </div>
+<!-- ************************************** -->
+
+<!--
     <main class="main">
         <div class="textos">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus porro laudantium suscipit iste
@@ -125,14 +148,16 @@
                 amet quia ab!</p>
         </div>
 
-    </main>
+    </main> -->
 
 
     <dialog class="modalg" id="modal">
         <form method="dialog">
             <div class="form-group">
-                <img src="images/logo temporal.PNG" alt="Logotipo">
-                <h1 id="NombrePagina_id">Nombre</h1>                
+
+                <img src="images/LOGO CAPA INTERMEDIA.png" width="200" height="200" alt="Logotipo">
+
+                <h1 id="NombrePagina_id">MAZED</h1>                
             </div>
             <input type="text" placeholder="Usuario">
             <input type="text" placeholder="Contraseña">
