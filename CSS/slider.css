@@ -1,16 +1,16 @@
 :root{
     --colorPrimario: #8c7761;
-    --background-Footer-Navbar:rgb(92, 76, 57);
+    --background-Footer-Navbar:#5c4c39;
 }
 .header{
  
-    background-color: rgb(137, 103, 77);/*rgb(164, 141, 107);*/
+    background-color: rgb(137, 103, 77); /*rgb(164, 141, 107);*/
     color: white;
     padding: 2rem 0;
 
     position: fixed;
     left: 0;
-    top:0;
+    top: 0;
     width: 100%;
 }
 .header a{
@@ -19,7 +19,7 @@
 }
 .logo-nav-container{
     display: flex;
-    justify-content: space-between;/*para que se baya uno a la izq y otro a la derecha si son flex*/
+    justify-content: space-between;/*para que se vaya uno a la izq y otro a la derecha si son flex*/
     align-items: center;
 }
 
@@ -142,6 +142,7 @@
 }
 
 /* -------------------------SLIDER------------------------------*/
+
 *{
     margin: 0;
     padding: 0;
