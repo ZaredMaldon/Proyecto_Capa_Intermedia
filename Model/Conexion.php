@@ -7,7 +7,6 @@
 ?>
 */
     class Conectar{
-         
         public static function conectar(){
             try{
                 $user="root";
