@@ -1,0 +1,57 @@
+.title{
+    font-size: 20px;
+}
+.form-grande{
+    width: 60em;
+}
+#LogoRegistro{
+    width: auto;
+    height:9em;
+    position: relative;
+    top: 1em;
+    left:25em;
+}
+.subtext2{
+    position: relative;
+    left: 2.7em;
+    display: inline;
+    max-width: 17.45em;
+    top: 1px;
+}
+.subtext1{
+    position: relative;
+    left: 2.7em;
+    display: inline;
+    max-width: 35.5em;
+    top: 1px;
+}
+
+input[type="date"],
+input[type="File"],select{
+    font-size: 20px;
+    width: 10em;
+    padding: 10px;
+    border: none;
+}
+
+@media only screen and (max-width: 975px) {
+    .form-grande{
+        width: 30em;
+    }
+    #LogoRegistro{
+        width: auto;
+        height:9em;
+        position: relative;
+        top: 1em;
+        left:10em;
+    }
+    input[type="date"],input[type="File"],select{
+        font-size: 15px;
+        width: 6em;
+        padding: 10px;
+        border: none;
+    }
+    .title{
+        font-size: 15px;
+    }
+  }

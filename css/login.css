@@ -37,7 +37,7 @@ h1 {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],input[type="email"]{
     font-size: 20px;
     width: 82%;
     padding: 10px;
@@ -91,11 +91,14 @@ p {
         width: 28em;
         margin-top: 150px;
         border-radius: 2%;
-        margin-bottom: 10em;
+        margin-bottom: 10em;/*Agregado por Zared*/
     }
 }
 
+/*agregado por Zared----------------------------------------------------*/
 .center{
     position: relative;
     left: 5em;
 }
+
+

@@ -9,35 +9,74 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/PaginaPrincipal.css">
+    <link rel="stylesheet" href="../css/RegistroZared.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <form class="formulario">
+    <form class="formulario form-grande">
 
         <h1>Registrate</h1>
+        <img src="../img/logo1.png" width="250" height="250" alt="Logotipo" id="LogoRegistro">
         <div class="contenedor">
 
-            <img src="../img/logo1.png" width="250" height="250" alt="Logotipo" class="center">
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <label for="FechaNacimiento" class="title">Selecciona tu Foto de Usuario:</label>
+                <input type="File" name="ImagenUsuario">
+            </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Nombre Completo">
+                <input type="text" placeholder="Nombre" name="Nombre">
+                <input type="text" placeholder="Apellido Paterno" name="ApPat" class="subtext2">
+                <input type="text" placeholder="Apellido Materno" name="ApMat"  class="subtext2">
 
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-id-badge icon"></i>
-                <input type="text" placeholder="Usuario">
+                <input type="text" placeholder="Usuario" name="UsuarioRegister">
 
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña">
+                <input type="password" placeholder="Contraseña" name="PasswordReg">
+                <input type="password" placeholder="Contraseña" class="subtext1" name="PasswordReg2">
 
             </div>
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+
+                <label for="Roles" class="title">Rol:</label>
+                <select name="Rol" id="Rol">
+                <option value="Cliente" select>Cliente</option>
+                <option value="Vendedor">Vendedor</option>
+                <option value="Administrador">Administrador</option>
+                </select>
+
+                <label for="Sexo" class="title">Sexo:</label>
+                <select name="Sexo" id="Sexo">
+                <option value="Masculino" select>Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+                </select>
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="email" placeholder="Email" name="Email">
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <label for="FechaNacimiento" class="title">Fecha de Nacimiento:</label>
+                <input type="date" name="FechaNacimiento"min="1900-01-01" max="2004-12-31">
+            </div>
+
             <input type="submit" value="Registrate" class="button">
             <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
             <p>¿Ya tienes una cuenta?<a class="link" href="Login.html">Iniciar Sesion</a> <a class="link"
