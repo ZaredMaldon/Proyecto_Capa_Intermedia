@@ -15,10 +15,11 @@
 </head>
 
 <body>
-    <form class="formulario form-grande">
+    <form class="formulario form-grande" action="" method="post">
 
-        <h1>Registrate</h1>
+        <h1>Regístrate</h1>
         <img src="../img/logo1.png" width="250" height="250" alt="Logotipo" id="LogoRegistro">
+
         <div class="contenedor">
 
             <div class="input-contenedor">
@@ -31,8 +32,7 @@
                 <i class="fas fa-user icon"></i>
                 <input type="text" placeholder="Nombre" name="Nombre">
                 <input type="text" placeholder="Apellido Paterno" name="ApPat" class="subtext2">
-                <input type="text" placeholder="Apellido Materno" name="ApMat"  class="subtext2">
-
+                <input type="text" placeholder="Apellido Materno" name="ApMat" class="subtext2">
             </div>
 
             <div class="input-contenedor">
@@ -52,16 +52,16 @@
 
                 <label for="Roles" class="title">Rol:</label>
                 <select name="Rol" id="Rol">
-                <option value="Cliente" select>Cliente</option>
-                <option value="Vendedor">Vendedor</option>
-                <option value="Administrador">Administrador</option>
+                    <option value="Cliente" select>Cliente</option>
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Administrador">Administrador</option>
                 </select>
 
                 <label for="Sexo" class="title">Sexo:</label>
                 <select name="Sexo" id="Sexo">
-                <option value="Masculino" select>Masculino</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Otro">Otro</option>
+                    <option value="Masculino" select>Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
                 </select>
 
             </div>
@@ -74,10 +74,10 @@
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
                 <label for="FechaNacimiento" class="title">Fecha de Nacimiento:</label>
-                <input type="date" name="FechaNacimiento"min="1900-01-01" max="2004-12-31">
+                <input type="date" name="FechaNacimiento" min="1900-01-01" max="2004-12-31">
             </div>
 
-            <input type="submit" value="Registrate" class="button">
+            <input type="submit" value="Registrate" class="button" id="BotonRegistro">
             <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
             <p>¿Ya tienes una cuenta?<a class="link" href="Login.html">Iniciar Sesion</a> <a class="link"
                     href="../index.html"> Cerrar</a></p>
@@ -99,13 +99,18 @@
             <div class="content-foo">
                 <h4>Información</h4>
                 <p>Esta compañia se dedica a dar facilidad para los usuarios</p>
-                <p>a sus ventas, compras, cotizaciones, etc., les da una forma</p> 
+                <p>a sus ventas, compras, cotizaciones, etc., les da una forma</p>
                 <p>más sencilla para llevar sus negocios.</p>
-                    
+
             </div>
         </div>
-        <h2 class="titulo-final">Copyright ©MAZED Company 2022. All Right Reserved By Zared Maldonado | Fernanda Mondragon</h2>
+        <h2 class="titulo-final">Copyright ©MAZED Company 2022. All Right Reserved By Zared Maldonado | Fernanda
+            Mondragon</h2>
     </footer>
+
+    <script src="../Script/jquery.js"></script>
+    <script src="../Script/plugins/jqueryvalidate.js"></script>
+    <script src="../Script/Registro_Validator.js"></script>
 </body>
 
 </html>

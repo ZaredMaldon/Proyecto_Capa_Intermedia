@@ -2,22 +2,30 @@ $(document).ready(function () {
     $(".formulario").validate({
     
         rules: {
-            UsuarioLogin: {
+            UsuarioRegister: {
                 required:true,
                 minlength:3
             },
-            PasswordLogin:{
+            PasswordReg:{
+                required:true,
+                minlength:8
+            },
+            PasswordReg2:{
                 required:true,
                 minlength:8
             }
         },
         // Specify validation error messages
         messages: {
-            UsuarioLogin: {
+            UsuarioRegister: {
                 required:"Ingrese su nombre de usuario",
                 minlength:"Debe tener al menos 3 caracteres"
             },
-            PasswordLogin:{
+            PasswordReg:{
+                required:"Ingrese la contraseña",
+                minlength:"Ingrese al menos 8 caracteres"
+            },
+            PasswordReg2:{
                 required:"Ingrese la contraseña",
                 minlength:"Ingrese al menos 8 caracteres"
             }
@@ -25,8 +33,10 @@ $(document).ready(function () {
     
     });
     
-    $("#Logginbtn").click(function () { 
-        var usuario=$("UsuarioLogin").val();
-        var password=$("PasswordLogin").val();
+    $("#BotonRegistro").click(function () { 
+        var usuario=$("UsuarioRegister").val();
+        var password=$("PasswordReg").val();
+        var password2=$("PasswordReg2").val();
     });
+
     });
