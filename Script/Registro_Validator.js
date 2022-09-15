@@ -31,7 +31,6 @@ $(".formulario").validate({
             required: true,
             email: true
         },
-        ImagenUsuario:"required",
         Nombre:"required",
         ApPat:"required",
         ApMat:"required",
@@ -61,6 +60,10 @@ $(".formulario").validate({
         Email: {
             required: "Ingrese un Email",
             email: "Email invalido"
-        }
+        },
+        Nombre:"Este campo es requerido",
+        ApPat:"Este campo es requerido",
+        ApMat:"Este campo es requerido",
+        FechaNacimiento:"Este campo es requerido"
     }
 });

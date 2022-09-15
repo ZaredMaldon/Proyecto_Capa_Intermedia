@@ -1,0 +1,9 @@
+.error{
+    position: relative;
+    color: red;
+    font-size: .8em;
+    font-weight: bolder;
+    font-stretch: expanded;
+    display: block;
+}
+
