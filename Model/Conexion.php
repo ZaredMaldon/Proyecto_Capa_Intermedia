@@ -10,7 +10,7 @@
         public static function conectar(){
             try{
                 $user="root";
-                $password="Zomrromr";
+                $password="Zomrromr28122801";
                 $server="localhost";
                 $DataBase="Progra_Web_CapaIntermedia";
 
