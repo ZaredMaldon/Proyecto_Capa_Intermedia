@@ -1,3 +1,43 @@
 body{
+    background: url(fondoLogin.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
     
+header{
+    height:140pt;
+}
+a{
+    font-size: 15pt;
+}
+.datos{
+    box-shadow: 0 0 6px 0 rgba(59, 59, 59, 0.719);
+    background: rgba(255, 255, 255, 0.197);
+    padding:50pt;
+    margin: 100pt auto;/*arriba-abajo, izq-der*/
+    border-radius: 15px;
+    max-width: 700pt;
+    height: auto;
+}
+.datos h1,h2,h3,h4{
+    text-align: center;
+}
+.imagen{
+    margin: 5pt 210pt;
+    
+}
+button{
+    border: none;
+    width: 60%;
+    color: rgba(255, 255, 255, 0.795);
+    font-size: 20px;
+    background: #b07f54;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#CambiarDatos{
+    position: relative;
+    margin: 1em auto;
+    left: 8em;
 }
