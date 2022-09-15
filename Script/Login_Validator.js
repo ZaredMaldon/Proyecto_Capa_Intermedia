@@ -3,23 +3,19 @@ $(document).ready(function () {
     
         rules: {
             UsuarioLogin: {
-                required:true,
-                minlength:3
+                required:true
             },
             PasswordLogin:{
-                required:true,
-                minlength:8
+                required:true
             }
         },
         // Specify validation error messages
         messages: {
             UsuarioLogin: {
-                required:"Ingrese su nombre de usuario",
-                minlength:"Debe tener al menos 3 caracteres"
+                required:"Ingrese su nombre de usuario"
             },
             PasswordLogin:{
-                required:"Ingrese la contraseña",
-                minlength:"Ingrese al menos 8 caracteres"
+                required:"Ingrese la contraseña"
             }
         }
     

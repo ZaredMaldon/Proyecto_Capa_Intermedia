@@ -43,7 +43,7 @@
 
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" name="PasswordReg">
+                <input type="password" placeholder="Contraseña" name="PasswordReg" id="PasswordReg">
                 <input type="password" placeholder="Contraseña" class="subtext1" name="PasswordReg2">
 
             </div>
@@ -52,14 +52,16 @@
 
                 <label for="Roles" class="title">Rol:</label>
                 <select name="Rol" id="Rol">
-                    <option value="Cliente" select>Cliente</option>
+                    <option value="0" select>Select</option>
+                    <option value="Cliente">Cliente</option>
                     <option value="Vendedor">Vendedor</option>
                     <option value="Administrador">Administrador</option>
                 </select>
 
                 <label for="Sexo" class="title">Sexo:</label>
                 <select name="Sexo" id="Sexo">
-                    <option value="Masculino" select>Masculino</option>
+                    <option value="0" select>Select</option>
+                    <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
                     <option value="Otro">Otro</option>
                 </select>
