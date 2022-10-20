@@ -1,4 +1,112 @@
-let products = {
+
+function Cartas(products) {
+  for (let i of products) {
+    console.log(i);
+    var num=+1;
+    console.log(num);
+    //Creamos la tarjeta
+    let card = document.createElement("div");
+    //Card should have category and should stay hidden initially
+    card.classList.add("card", i.category, "hide");
+    //image div
+    /*let imgContainer = document.createElement("div");
+    imgContainer.classList.add("image-container");
+    //img tag
+    let image = document.createElement("img");
+    image.setAttribute("src", i.image);
+    imgContainer.appendChild(image);
+    card.appendChild(imgContainer); */
+    //container
+    let container = document.createElement("div");
+    container.classList.add("container");
+      //fecha
+      let fecha = document.createElement("h3");
+      fecha.classList.add("product-fecha");
+      fecha.innerText = i.fyh.toUpperCase();
+      container.appendChild(fecha);
+    //Categoria
+    let Categoria = document.createElement("h4");
+    Categoria.classList.add("product-categoria");
+    Categoria.innerText = i.category.toUpperCase();
+    container.appendChild(Categoria);
+    //nombre del prodcuto
+    let name = document.createElement("h5");
+    name.classList.add("product-name");
+    name.innerText = i.productName.toUpperCase();
+    container.appendChild(name);
+    //precio
+    let price = document.createElement("h6");
+    price.innerText = i.price;
+    container.appendChild(price);
+    //Calificación
+    let Calificacion = document.createElement("h7");  
+    Calificacion.classList.add("product-cali");
+    Calificacion.innerText = i.Calificacion;
+    container.appendChild(Calificacion);
+  
+  
+    card.appendChild(container);
+    document.getElementById("products").appendChild(card);
+  }
+  }
+
+
+ajax_get_json();
+function DarCategoria(numero){
+    if(numero===1){
+      return "Alimento";
+    }else if(numero===2){
+      return "Ejercicio";
+    }else if(numero===3){
+      return "Bebidas";
+    } else{
+      return "Sin Categoria"
+    }
+}
+function ajax_get_json(){
+    let products=[];
+    const xhr=new XMLHttpRequest();
+    method='GET',
+    url='http://localhost:82/Proyecto%20Capa%20Intermedia/Proyecto_Capa_Intermedia/DAO/RespuestaApi.php';
+    xhr.open(method,url,true);
+    xhr.onload=function(){
+      if(this.status===200){
+        let datos=[];
+        datos=JSON.parse(this.responseText);
+
+        datos.items.forEach(function(item){
+          console.log(datos);
+          var categoria=DarCategoria(item.Fk_Categoria);
+          //console.log(item.Fk_Categoria);
+          //console.log(categoria);
+          // products.push({Cantidad:item.Cantidad,Comentarios:null,Existencia:item.Existencia,Fk_Categoria:item.Fk_Categoria,Imagen1:null,Imagen2:null,Imagen3:null,NoProducto:item.NoProducto,NombreProducto:item.NombreProducto,Precio:item.Precio,Valoracion:item.Valoracion,Ventas:item.Ventas,Video:null});
+          products.push({fyh:'Ventas '+item.Ventas,category: categoria,productName: item.NombreProducto,price: item.Precio,Calificacion: item.Valoracion});
+          
+          /*  products={
+            data:[
+              {
+                fyh: item.Ventas,
+                category: categoria,
+                productName: item.NombreProducto,
+                price: item.Precio,
+                Calificacion: item.Valoracion
+              }
+            ]
+          } */
+        });
+        Cartas(products);
+        console.log(products);
+      }else{
+        console.log('hay algun error');
+      }
+    }
+    xhr.send();
+}
+
+
+
+
+/* let products = {
   data: [
     {
       fyh: "05-09-2022  12:00 pm",
@@ -64,53 +172,7 @@ let products = {
       Calificacion: "3.8",
     },
   ],
-};
-
-for (let i of products.data) {
-  //Creamos la tarjeta
-  let card = document.createElement("div");
-  //Card should have category and should stay hidden initially
-  card.classList.add("card", i.category, "hide");
-  //image div
-  /*let imgContainer = document.createElement("div");
-  imgContainer.classList.add("image-container");
-  //img tag
-  let image = document.createElement("img");
-  image.setAttribute("src", i.image);
-  imgContainer.appendChild(image);
-  card.appendChild(imgContainer); */
-  //container
-  let container = document.createElement("div");
-  container.classList.add("container");
-    //fecha
-    let fecha = document.createElement("h3");
-    fecha.classList.add("product-fecha");
-    fecha.innerText = i.fyh.toUpperCase();;
-    container.appendChild(fecha);
-  //Categoria
-  let Categoria = document.createElement("h4");
-  Categoria.classList.add("product-categoria");
-  Categoria.innerText = i.category.toUpperCase();
-  container.appendChild(Categoria);
-  //nombre del prodcuto
-  let name = document.createElement("h5");
-  name.classList.add("product-name");
-  name.innerText = i.productName.toUpperCase();
-  container.appendChild(name);
-  //precio
-  let price = document.createElement("h6");
-  price.innerText = "$" + i.price;
-  container.appendChild(price);
-  //Calificación
-  let Calificacion = document.createElement("h7");  
-  Calificacion.classList.add("product-cali");
-  Calificacion.innerText = i.Calificacion.toUpperCase();
-  container.appendChild(Calificacion);
-
-
-  card.appendChild(container);
-  document.getElementById("products").appendChild(card);
-}
+}; */
 
 //parámetro pasado desde el botón (parámetro igual que categoría)
 function filterProduct(value) {
