@@ -10,57 +10,58 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
-   <!-- CSS only -->
-    <link rel="shortcut icon" href="img/logo1.jpg" type="image/x-icon">
+    <!-- CSS only -->
+    <link rel="shortcut icon" href="../img/logo1.jpg" type="image/x-icon">
     
-    <link rel="stylesheet" href="css/Pedidos.css"/>
+    <link rel="stylesheet" href="../CSS/Pedidos.css"/>
   </head>
-
   <body>
-    
+
     <nav>
       <a href="../index.html">Inicio</a>
-        <a href="Compras.html">Compra</a>
-        <a href="Consulta_ventas.html">Ventas</a>
-        <a href="Consulta_pedidos.html">Compras</a>
-        <a href="../view/Perfil Usuario.html">Ramonsito64</a>
-        <a href="../view/Login.html" id="Login-btn" class="link">Login</a>
+      <a href="Compras.html">Compra</a>
+      <a href="Consulta_ventas.html">Ventas</a>
+      <a href="Consulta_pedidos.html">Compras</a>
+      <a href="Perfil Usuario.html">Ramonsito64</a>
+      <a href="Login.html" id="Login-btn" class="link">Login</a>
     </nav>
 
-        <img  class="Logo" src="img/NOMBRE.png" width="180" height="75" alt="Imagen">
+    <img  class="Logo" src="../img/NOMBRE.png" width="180" height="75" alt="Imagen">
 
     <section class="textos">
-        <h1>Consulta de pedidos</h1>
-        <h2>Online Shop</h2>
+        <h1> Bienvenido a MAZED </h1>
+        <h2> Online Shop</h2>
     </section>
+        
+    <div class="producto-txt">
+        <h1> Los productos más vendidos aquí </h1>
+    </div>
 
-    <div class="wrapper">
-
-      <div id="search-container">
+    <div id="search-container">
         <input
           type="search"
           id="search-input"
-          placeholder="Busque el nombre del producto aquí.."
+          placeholder="Busque el nombre del producto aquí..."
         />
         <button id="search">Search</button>
-      </div>
-
+    </div>
+        
       <div id="buttons">
 
         <button class="button-value" onclick="filterProduct('Todos')">
           Todos
         </button>
 
-        <button class="button-value" onclick="filterProduct('Ropa')">
-          Ropa
+        <button class="button-value" onclick="filterProduct('Alimento')">
+          Alimento
         </button>
 
-        <button class="button-value" onclick="filterProduct('Hogar')">
-          Hogar
+        <button class="button-value" onclick="filterProduct('Ejercicio')">
+          Ejercicio
         </button>
 
-        <button class="button-value" onclick="filterProduct('Videojuegos')">
-          Videojuegos
+        <button class="button-value" onclick="filterProduct('Bebidas')">
+          Bebidas
         </button>
 
         <button class="button-value" onclick="filterProduct('Electronicos')">
@@ -79,8 +80,7 @@
       </div>
       <div id="products"></div>
     </div>
-
-    <footer>
+      <footer>
         <div class="contenedor-footer">
             <div class="content-foo">
                 <h4>Teléfono</h4>
@@ -96,13 +96,12 @@
                 <h4>Información</h4>
                 <p>Esta compañia se dedica a dar facilidad para los usuarios</p>
                 <p>a sus ventas, compras, cotizaciones, etc., les da una forma</p> 
-                <p>más sencilla para llevar sus negocios.</p>
-                    
+                <p>más sencilla para llevar sus negocios.</p>             
             </div>
         </div>
         <h2 class="titulo-final">Copyright ©MAZED Company 2022. All Right Reserved By Zared Maldonado | Fernanda Mondragon</h2>
     </footer>   
-    <!-- Script -->
-   <script src="js/pedidos.js"></script> 
+ <!-- Script -->
+ <script src="../js/pedidos.js"></script> 
   </body>
 </html>
