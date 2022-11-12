@@ -3,7 +3,8 @@ $usuario=$_POST['UsuarioLogin'];
 $password=$_POST['PasswordLogin'];
 require_once("Conexion.php"); 
 
-$con=Conectar::conectar();
+$conexion=new Conectar();
+$con=$conexion->conectar();
 $consulta="SELECT idUsuario,Usuario,Contrasenia FROM Usuarios where Usuario='$usuario' and Contrasenia='$password';";
 $resultado=mysqli_query($con,$consulta);
 $filas=mysqli_num_rows($resultado);

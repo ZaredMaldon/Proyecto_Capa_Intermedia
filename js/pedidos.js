@@ -1,9 +1,7 @@
 
 function Cartas(products) {
   for (let i of products) {
-    console.log(i);
-    var num=+1;
-    console.log(num);
+    //console.log(i.category);
     //Creamos la tarjeta
     let card = document.createElement("div");
     //Card should have category and should stay hidden initially
@@ -53,49 +51,37 @@ function Cartas(products) {
 
 ajax_get_json();
 function DarCategoria(numero){
-    if(numero===1){
+    console.log(numero);
+    if(numero==1){
       return "Alimento";
-    }else if(numero===2){
+    }else if(numero==2){
       return "Ejercicio";
-    }else if(numero===3){
+    }else if(numero==3){
       return "Bebidas";
     } else{
-      return "Sin Categoria"
+      return "error"
     }
 }
 function ajax_get_json(){
     let products=[];
     const xhr=new XMLHttpRequest();
     method='GET',
-    url='http://localhost:82/Proyecto%20Capa%20Intermedia/Proyecto_Capa_Intermedia/DAO/RespuestaApi.php';
+    //url='http://localhost:82/Proyecto%20Capa%20Intermedia/Proyecto_Capa_Intermedia/DAO/RespuestaApi.php';
+    url='http://localhost/Proyecto_Capa_Intermedia/DAO/RespuestaApi.php';
     xhr.open(method,url,true);
     xhr.onload=function(){
       if(this.status===200){
         let datos=[];
         datos=JSON.parse(this.responseText);
-
+        console.log(datos.items);
+        var num=0;
         datos.items.forEach(function(item){
-          console.log(datos);
           var categoria=DarCategoria(item.Fk_Categoria);
-          //console.log(item.Fk_Categoria);
-          //console.log(categoria);
-          // products.push({Cantidad:item.Cantidad,Comentarios:null,Existencia:item.Existencia,Fk_Categoria:item.Fk_Categoria,Imagen1:null,Imagen2:null,Imagen3:null,NoProducto:item.NoProducto,NombreProducto:item.NombreProducto,Precio:item.Precio,Valoracion:item.Valoracion,Ventas:item.Ventas,Video:null});
-          products.push({fyh:'Ventas '+item.Ventas,category: categoria,productName: item.NombreProducto,price: item.Precio,Calificacion: item.Valoracion});
-          
-          /*  products={
-            data:[
-              {
-                fyh: item.Ventas,
-                category: categoria,
-                productName: item.NombreProducto,
-                price: item.Precio,
-                Calificacion: item.Valoracion
-              }
-            ]
-          } */
+            products.push({fyh:'Ventas '+item.Ventas,category:categoria,productName: item.NombreProducto,price: item.Precio,Calificacion: item.Valoracion}); 
+            console.log(products);
         });
         Cartas(products);
-        console.log(products);
+        
       }else{
         console.log('hay algun error');
       }
@@ -103,76 +89,6 @@ function ajax_get_json(){
     xhr.send();
 }
 
-
-
-
-/* let products = {
-  data: [
-    {
-      fyh: "05-09-2022  12:00 pm",
-      category: "Ropa",
-      productName: "Blusa oversize color rosa",
-      price: "230",
-      Calificacion: "4.4",
-    },
-    {
-      fyh: "07-09-2022  14:25 pm",
-      category: "Hogar",
-      productName: "Sofá cama color rosa pastel",
-      price: "8650",
-      Calificacion: "4.6",
-    },
-    {
-      fyh: "08-09-2022  16:30 pm",
-      category: "Videojuegos",
-      productName: "Call of Duty BLack ops",
-      price: "850",
-      Calificacion: "5.0",
-    },
-    {
-      fyh: "10-09-2022  13:30 pm",
-      category: "Mascotas",
-      productName: "Collar rosa para gato",
-      price: "99",
-      Calificacion: "4.3",
-    },
-    {
-      fyh: "09-09-2022  15:27 pm",
-      category: "Belleza",
-      productName: "Crema Regeneradora",
-      price: "260",
-      Calificacion: "4.8",
-    },
-    {
-      fyh: "11-09-2022  18:06 pm",
-      category: "Electronicos",
-      productName: "Television '50'",
-      price: "20,300",
-      Calificacion: "4.4",
-    },
-    {
-      fyh: "12-09-2022  13:50 pm",
-      category: "Videojuegos",
-      productName: "Dead By Daylight",
-      price: "450",
-      Calificacion: "5.0",
-    },
-    {
-      fyh: "13-09-2022  19:35 pm",
-      category: "Electronicos",
-      productName: "Cargador Iphone 20W",
-      price: "500",
-      Calificacion: "4.8",
-    },
-    {
-      fyh: "14-09-2021  16:24 pm",
-      category: "Hogar",
-      productName: "Alfombra de peluche cafe",
-      price: "1250",
-      Calificacion: "3.8",
-    },
-  ],
-}; */
 
 //parámetro pasado desde el botón (parámetro igual que categoría)
 function filterProduct(value) {
