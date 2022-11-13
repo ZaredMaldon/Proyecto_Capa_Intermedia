@@ -10,8 +10,8 @@
         public function conectar(){
             try{
                 $user="root";
-                $password="Zomrromr28122801";
-                //$password="Zomrromr";
+                //$password="Zomrromr28122801";
+                $password="Zomrromr";
                 $server="localhost";
                 $DataBase="Progra_Web_CapaIntermedia";
 

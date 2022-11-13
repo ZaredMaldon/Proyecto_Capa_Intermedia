@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <form action="http://localhost/Proyecto_Capa_Intermedia/Controller/Registro.php" class="formulario form-grande" method="post">
+    <form id="form_Registro" action="" class="formulario form-grande" method="post">
 
         <h1>Regístrate</h1>
         <img src="../img/logo1.png" width="250" height="250" alt="Logotipo" id="LogoRegistro">
@@ -54,17 +54,17 @@
                 <label for="Roles" class="title">Rol:</label>
                 <select name="Rol" id="Rol">
                     <option value="0" select>Select</option>
-                    <option value="Cliente">Cliente</option>
-                    <option value="Vendedor">Vendedor</option>
-                    <option value="Administrador">Administrador</option>
+                    <option value="1">Cliente</option>
+                    <option value="2">Vendedor</option>
+                    <option value="3">Administrador</option>
                 </select>
 
                 <label for="Sexo" class="title">Sexo:</label>
                 <select name="Sexo" id="Sexo">
                     <option value="0" select>Select</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Otro">Otro</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                    <option value="3">Otro</option>
                 </select>
 
             </div>
@@ -77,9 +77,9 @@
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
                 <label for="FechaNacimiento" class="title">Fecha de Nacimiento:</label>
-                <input type="date" name="FechaNacimiento" min="1900-01-01" max="2004-12-31">
+                <input type="date" id="FNac" name="FechaNacimiento" value="" min="1900-01-01" max="2004-12-31">
             </div>
-
+            
             <input type="submit" value="Registrate" class="button" id="BotonRegistro">
             <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
             <p>¿Ya tienes una cuenta?<a class="link" href="Login.html">Iniciar Sesion</a> <a class="link"
@@ -114,6 +114,7 @@
     <script src="../Script/jquery.js"></script>
     <script src="../Script/plugins/jqueryvalidate.js"></script>
     <script src="../Script/Registro_Validator.js"></script>
+    <script src="../js/Form.js"></script>
 </body>
 
 </html>
