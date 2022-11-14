@@ -39,7 +39,6 @@ class UsuarioDao{
         }catch(Exception $e){
             echo json_encode("Excepcion: ".$e->getMessage());
         }
-        
     }
 
     public function editar($_id,$Usuario,$_Email,$_Nombres,$_APat,$_AMat,$_Password){
@@ -53,14 +52,13 @@ class UsuarioDao{
         }
     }
 
-    /*public function get_User($_id){
-        $conexion=new Conectar();
-        $msql=$conexion->conectar();
-        $msql->prepare("SELECT * FROM Users where id=$_id");
+    public function get_User($_id){
+        $msql=$this->conexion;
+        $execute=$msql->query("SELECT * FROM Users where id={$_id}");
+        $usuarioNow=$execute->fetch_all(PDO::FETCH_ASSOC);
         $msql->close();
-        $usuarioNow=new Usuario($img,$nom,$apP,$apM,$usu,$password,$roll,$genero,$correo,$fNac,$fIn);
         return $usuarioNow;
-    }*/
+    }
 }
 
 ?>
