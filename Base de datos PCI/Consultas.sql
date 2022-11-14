@@ -4,4 +4,4 @@ Select*from Usuarios;
 Select*from Personas;
 commit;
 Delete from usuarios where id=2;
-Select @@TRANCOUNT
+

@@ -3,47 +3,54 @@
 require_once("../Model/Conexion.php");
 require_once("../Model/Usuario.php");
 class UsuarioDao{
+    private $conexion;
+    function __construct()
+    {   
+        $this->conexion=new Conectar();
+        $this->conexion=$this->conexion->conectar();
+        
+    }
+
     
     public function agregar($Usuario,$_Email,$_Nombres,$_APat,$_AMat,$_Password){
+        try{
+            $msql=$this->conexion;
+            $msql->query("CALL sp_Usuario(1,null,'{$Usuario}','{$_Password}',2,'{$_Email}',null,'{$_Nombres}','{$_APat}','{$_AMat}',null,1);");
+            // $statement=$msql->prepare("CALL sp_Usuario(?,?,'?','?',?,'?',?,'?','?','?',?,?);");
+            // $statement->bind_param(1,null,$Usuario,$_Password,2/*Rol*/,$_Email,null/*Imagen*/,$_Nombres,$_APat,$_AMat,null/*nacimiento*/,1/*sexo*/);
+            // $statement->execute();
+            // $statement->close();
+            $msql->close();
+            echo json_encode("Se registro exitosamente el Usuario ".$_Password);
+        }catch(Exception $e){
+            echo json_encode("Excepcion: ".$e->getMessage());
+        }
         
-        $conexion=new Conectar();
-        $msql=$conexion->conectar();
-        $statement=$msql->prepare("CALL sp_Usuario(?,?,?,?,?,?,?,?,?,?,?,?);");
-        $statement->bind_param(1,null,$Usuario,$_Password,2/*Rol*/,$_Email,null/*Imagen*/,$_Nombres,$_APat,$_AMat,null/*nacimiento*/,1/*sexo*/);
-        $statement->execute();
-        $statement->close();
-        $msql->close();
-        echo json_encode("Se registro exitosamente el Usuario");
     }
 
     public function eliminar($_id){
-        $conexion=new Conectar();
-        $msql=$conexion->conectar();
-        $statement=$msql->prepare("CALL sp_Usuario(?,?,?,?,?,?,?,?,?,?,?,?);");
-        $statement->bind_param(2,$_id,null,null,null,null,null,null,null,null,null);
-        $statement->execute();
-        $statement->close();
-        $msql->close();
+        try{
+            $msql=$this->conexion;
+            $statement=$msql->prepare("CALL sp_Usuario(?,?,?,?,?,?,?,?,?,?,?,?);");
+            $statement->bind_param(2,$_id,"null","null","null","null","null","null","null","null","null","null");
+            $statement->execute();
+            $statement->close();
+            $msql->close();
+        }catch(Exception $e){
+            echo json_encode("Excepcion: ".$e->getMessage());
+        }
+        
     }
 
-    public function editar(){
-        $Usuario = $_POST['UsuarioM'];
-        $Email = $_POST['EmailM'];
-        $Imagen = $_POST['ImagenUsuarioM'];
-        $Nombres = $_POST['NombreM'];
-        $APat = $_POST['APatM'];
-        $AMat = $_POST['ApMatM'];
-        $Fecha_Nacimiento = $_POST['FechaNacimientoM'];
-        $Sexo = $_POST['SexoM'];
-        $Rol=$_POST['RolM'];
-
-        $conexion=new Conectar();
-        $msql=$conexion->conectar();
-        $statement=$msql->prepare("CALL sp_Usuario(?,?,?,?,?,?,?,?,?,?,?);");
-        $statement->bind_param(3,null,$Usuario,$Email,$Imagen,$Nombres,$APat,$AMat,$Fecha_Nacimiento,$Sexo,$Rol);
-        $statement->execute();
-        $statement->close();
-        $msql->close();
+    public function editar($_id,$Usuario,$_Email,$_Nombres,$_APat,$_AMat,$_Password){
+        try{
+            $msql=$this->conexion;
+            $msql->query("CALL sp_Usuario(3,'{$_id}','{$Usuario}','{$_Password}',2,'{$_Email}',null,'{$_Nombres}','{$_APat}','{$_AMat}',null,1);");
+            $msql->close();
+            echo json_encode("Se registro exitosamente el Usuario ".$_Password);
+        }catch(Exception $e){
+            echo json_encode("Excepcion: ".$e->getMessage());
+        }
     }
 
     /*public function get_User($_id){
