@@ -21,8 +21,16 @@
             <a href="View/Compras.html">Compra</a>
             <a href="View/Consulta_ventas.html">Ventas</a>
             <a href="View/Consulta_pedidos.html">Compras</a>
-            <a href="View/Perfil Usuario.html">Ramonsito64</a>
-            <a href="View/Login.html" id="Login-btn" class="link">Login</a>
+            <?php
+            session_start();
+            if(isset($_SESSION['userNow'])){
+            ?>
+            <a href="View/Perfil Usuario.html"><?php echo $_SESSION['userNow'][1]?></a>
+            <a id="Salir-btn" name="SalirBtn" class="link" onclick="salir();">Salir</a>
+            <?php }else{?>
+            <a href="View/Login.html" id="Login-btn" class="link" >Login</a>
+            <?php }?>
+
         </nav>
         
         <img  class="Logo" src="img/NOMBRE.png" width="180" height="75" alt="Imagen">
@@ -159,7 +167,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
         </script>
-        <script src="Script/ModalLogin.js"></script>
+        <script src="js/Funciones.js"></script>
+        
+        
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 var formularioRegistro=document.getElementById('form_Registro');
 
+
 formularioRegistro.addEventListener("submit",function(){
     //e.preventDefault();
     var sexo=valorSelect('Sexo');
@@ -18,10 +19,18 @@ formularioRegistro.addEventListener("submit",function(){
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
+
+        if(data=="1"){
+            console.log(data);
+            window.location.assign("../View/Login.html");
+        }
+        else if(data=="0"){
+            console.log(data);
+        }
+
     })
-    
 });
+
 
 //regresa el valor de un Select(comboBox) por medio de su id
 function valorSelect(_id){

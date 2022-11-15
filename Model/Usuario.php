@@ -1,6 +1,7 @@
 <?php
 //Clase usuario para almacenar todos los datos consultados de la base de datos
 class Usuario{
+    private $id;
     private $imagen;
     private $nombre;
     private $apPat;
@@ -13,8 +14,9 @@ class Usuario{
     private $fechaNacimiento;
     private $fechaIngreso;
 
-    public function _construct($img,$nom,$apP,$apM,$usu,$password,$roll,$genero,$correo,$fNac,$fIn)
+    public function _construct($id,$usu,$password,$roll,$correo,$img,$nom,$apP,$apM,$fNac,$genero,$fIn)
     {
+        $this->id=$id;
         $this->imagen=$img;
         $this->nombre=$nom;
         $this->apPat=$apP;
@@ -60,6 +62,9 @@ class Usuario{
     }
     public function getFechaIngreso(){
         return $this->fechaIngreso;
+    }
+    public function getId(){
+        return $this->id;
     }
 
 }

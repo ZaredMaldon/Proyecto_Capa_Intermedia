@@ -12,18 +12,19 @@ class UsuarioDao{
     }
 
     
-    public function agregar($Usuario,$_Email,$_Nombres,$_APat,$_AMat,$_Password){
+    public function agregar($Usuario,$Email,$Imagen,$Nombres,$APat,$AMat,$Fecha_Nacimiento,$Sexo,$Rol,$Password){
         try{
             $msql=$this->conexion;
-            $msql->query("CALL sp_Usuario(1,null,'{$Usuario}','{$_Password}',2,'{$_Email}',null,'{$_Nombres}','{$_APat}','{$_AMat}',null,1);");
-            // $statement=$msql->prepare("CALL sp_Usuario(?,?,'?','?',?,'?',?,'?','?','?',?,?);");
-            // $statement->bind_param(1,null,$Usuario,$_Password,2/*Rol*/,$_Email,null/*Imagen*/,$_Nombres,$_APat,$_AMat,null/*nacimiento*/,1/*sexo*/);
-            // $statement->execute();
-            // $statement->close();
+            $execute=$msql->query("CALL sp_Usuario(1,null,'{$Usuario}','{$Password}',{$Rol},'{$Email}','{$Imagen}','{$Nombres}','{$APat}','{$AMat}','{$Fecha_Nacimiento}',{$Sexo});");
+            if($execute){
+                echo json_encode("1");
+            }
             $msql->close();
-            echo json_encode("Se registro exitosamente el Usuario ".$_Password);
+            
+            
         }catch(Exception $e){
-            echo json_encode("Excepcion: ".$e->getMessage());
+            //echo json_encode("Excepcion: ".$e->getMessage());
+            echo json_encode("0");
         }
         
     }
@@ -41,12 +42,12 @@ class UsuarioDao{
         }
     }
 
-    public function editar($_id,$Usuario,$_Email,$_Nombres,$_APat,$_AMat,$_Password){
+    public function editar($_id,$Usuario,$Email,$Imagen,$Nombres,$APat,$AMat,$Fecha_Nacimiento,$Sexo,$Rol,$Password){
         try{
             $msql=$this->conexion;
-            $msql->query("CALL sp_Usuario(3,'{$_id}','{$Usuario}','{$_Password}',2,'{$_Email}',null,'{$_Nombres}','{$_APat}','{$_AMat}',null,1);");
+            $msql->query("CALL sp_Usuario(3,'{$_id}','{$Usuario}','{$Password}',{$Rol},'{$Email}','{$Imagen}','{$Nombres}','{$APat}','{$AMat}','{$Fecha_Nacimiento}',{$Sexo});");
             $msql->close();
-            echo json_encode("Se registro exitosamente el Usuario ".$_Password);
+            echo json_encode("Se edito exitosamente el Usuario ".$Usuario);
         }catch(Exception $e){
             echo json_encode("Excepcion: ".$e->getMessage());
         }
