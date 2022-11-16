@@ -42,6 +42,7 @@ Create table Categorias(
     Categoria		varchar(30) not null,
     Descripcion		mediumtext not null,
     Fk_Usuario		bigint not null,
+    Estatus			bool not null,
     Constraint PK_Categorias primary key (idCategoria),
     Constraint Fk_Usuario2 foreign key(Fk_Usuario) references Usuarios(idUsuario)
 );

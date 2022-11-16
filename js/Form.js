@@ -22,6 +22,7 @@ formularioRegistro.addEventListener("submit",function(){
 
         if(data=="1"){
             console.log(data);
+            alert('registrado');
             window.location.assign("../View/Login.html");
         }
         else if(data=="0"){
