@@ -17,7 +17,7 @@
     <header>
         
         <nav>
-            <a href="index.html">Inicio</a>
+            <a href="index.php">Inicio</a>
             <a href="View/Compras.html">Compra</a>
             <a href="View/Consulta_ventas.html">Ventas</a>
             <a href="View/Consulta_pedidos.html">Compras</a>
@@ -25,8 +25,8 @@
             session_start();
             if(isset($_SESSION['userNow'])){
             ?>
-            <a href="View/Perfil Usuario.html"><?php echo $_SESSION['userNow'][1]?></a>
-            <a id="Salir-btn" name="SalirBtn" class="link" onclick="salir();">Salir</a>
+            <a href="View/Perfil Usuario.php"><?php echo $_SESSION['userNow'][1]?></a>
+            <a id="Salir-btn" name="SalirBtn" class="link" onclick="salir();">Cerrar Sesion</a>
             <?php }else{?>
             <a href="View/Login.html" id="Login-btn" class="link" >Login</a>
             <?php }?>

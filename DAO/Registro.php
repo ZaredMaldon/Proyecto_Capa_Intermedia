@@ -13,8 +13,9 @@ $_Imagen = addslashes(file_get_contents($_FILES['ImagenUsuario']['tmp_name']));
 $_Fecha_Nacimiento = $_POST['FechaNacimiento'];
 $_Sexo = $_REQUEST['Sexo'];
 $_Rol=$_REQUEST['Rol'];
+$_Tipo=$_REQUEST['Tipo'];
 
-$usuarioDao->agregar($_Usuario,$_Email,$_Imagen,$_Nombres,$_APat,$_AMat,$_Fecha_Nacimiento,$_Sexo,$_Rol,$_Password);
+$usuarioDao->agregar($_Usuario,$_Email,$_Imagen,$_Nombres,$_APat,$_AMat,$_Fecha_Nacimiento,$_Sexo,$_Rol,$_Password,$_Tipo);
 //$usuarioDao->agregar($_Usuario,$_Email,$_Nombres,$_APat,$_AMat,$_Password);
 
 ?>

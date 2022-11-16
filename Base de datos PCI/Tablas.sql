@@ -16,6 +16,8 @@ create table Usuarios(/*ya creada*/
     Contrasenia varchar(100) not null,
 	Fk_Rol		bigint not null,
     Email		varchar(100) not null,
+    Tipo		varchar(15) not null,
+    Estatus		bool,
     Constraint PK_Usuario primary key(idUsuario),
     Constraint Fk_Rol foreign key (Fk_Rol) references Roles(idRol)
 );

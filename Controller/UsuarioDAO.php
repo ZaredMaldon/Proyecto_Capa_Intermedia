@@ -12,10 +12,10 @@ class UsuarioDao{
     }
 
     
-    public function agregar($Usuario,$Email,$Imagen,$Nombres,$APat,$AMat,$Fecha_Nacimiento,$Sexo,$Rol,$Password){
+    public function agregar($Usuario,$Email,$Imagen,$Nombres,$APat,$AMat,$Fecha_Nacimiento,$Sexo,$Rol,$Password,$Tipo){
         try{
             $msql=$this->conexion;
-            $execute=$msql->query("CALL sp_Usuario(1,null,'{$Usuario}','{$Password}',{$Rol},'{$Email}','{$Imagen}','{$Nombres}','{$APat}','{$AMat}','{$Fecha_Nacimiento}',{$Sexo});");
+            $execute=$msql->query("CALL sp_Usuario(1,null,'{$Usuario}','{$Password}',{$Rol},'{$Email}','{$Imagen}','{$Nombres}','{$APat}','{$AMat}','{$Fecha_Nacimiento}',{$Sexo},'{$Tipo}');");
             if($execute){
                 echo json_encode("1");
             }

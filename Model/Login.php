@@ -6,9 +6,11 @@ require_once("Usuario.php");
 
 $conexion=new Conectar();
 $con=$conexion->conectar();
-$consulta="SELECT u.idUsuario,u.Usuario,u.Contrasenia,u.Fk_Rol,u.Email,p.Imagen,p.Nombres,p.APat,p.AMat,p.Fecha_Nacimiento,p.Sexo,p.Fecha_ingreso FROM Usuarios u
+$consulta="SELECT u.idUsuario,u.Usuario,u.Contrasenia,u.Tipo,u.Fk_Rol,r.Rol,u.Email,p.Imagen,p.Nombres,p.APat,p.AMat,p.Fecha_Nacimiento,p.Sexo as idSexo,s.Sexo,p.Fecha_ingreso,u.Estatus FROM Usuarios u
 INNER JOIN Personas p on u.idUsuario=p.Fk_Usuario
-where u.Usuario='$usuario' and u.Contrasenia='$password';";
+INNER JOIN Roles r on u.Fk_Rol=r.idRol
+INNER JOIN Sexo s on p.Sexo=s.idSexo
+where (Usuario='$usuario' and Contrasenia='$password') and (Estatus=1);";
 $resultado=mysqli_query($con,$consulta);
 $filas=mysqli_num_rows($resultado);
 
@@ -19,7 +21,7 @@ if($filas){
 
     while($fila=mysqli_fetch_array($resultado)){
         
-        $_SESSION['userNow']= array($fila['idUsuario'],$fila['Usuario'],$fila['Contrasenia'],$fila['Fk_Rol'],$fila['Email'],$fila['Imagen'],$fila['Nombres'],$fila['APat'],$fila['AMat'],$fila['Fecha_Nacimiento'],$fila['Sexo'],$fila['Fecha_ingreso']);
+        $_SESSION['userNow']= array($fila['idUsuario'],$fila['Usuario'],$fila['Contrasenia'],$fila['Tipo'],$fila['Fk_Rol'],$fila['Rol'],$fila['Email'],$fila['Imagen'],$fila['Nombres'],$fila['APat'],$fila['AMat'],$fila['Fecha_Nacimiento'],$fila['idSexo'],$fila['Sexo'],$fila['Fecha_ingreso'],$fila['Estatus']);
     }
     header("location:../index.php");
 }else{
