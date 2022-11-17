@@ -43,7 +43,6 @@
                 <h4>Eres miembro desde: <?php echo $_SESSION['userNow'][14];  ?></h4>
                 <button id="CambiarDatos" onclick="mostrarPopup();">Cambiar datos</button>
             </div>
-
         </div>
 
         <div id="sectionGrupo">
@@ -52,39 +51,40 @@
                 <div class="content">
                     <div class="close-btn" id="btnCerrarP" onclick="quitarPopup()">&times;</div>
                     <h1>Modifica tus datos</h1>
-                    <form id="ModificarUsuario" method="POST">
+                    
+                    <form id="ModificarUsuario" class="formulario" method="POST" action="">
 
                         <div class="contenedor">
 
-                        <div class="image-upload">
+                        <div class="image-upload input-contenedor">
                             <label for="file-input">
-                                <img src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['userNow'][7]); ?>" alt ="Click aquí para subir tu foto" title ="Click aquí para subir tu foto" > 
+                                <img id="imagenPopup" name="ImagenUsuario" src="data:image/jpg;base64,<?php echo base64_encode($_SESSION['userNow'][7]); ?>" alt ="Click aquí para subir tu foto" title ="Click aquí para subir tu foto" > 
                             </label>
-                            <input id="file-input" name="foto" type="file"/>
+                            <input id="file-input" name="foto" type="File"/>
                         </div>
 
                             <div class="input-contenedor">
                                 <i class="fas fa-user icon"></i>
                                 <input type="text" placeholder="Nombre" name="Nombres" value="<?php  echo $_SESSION['userNow'][8] ?>" id="Nombres">
-                                <input type="text" placeholder="Apellido Paterno" value="<?php  echo $_SESSION['userNow'][9] ?>" name="ApPat" class="subtext2">
-                                <input type="text" placeholder="Apellido Materno" value="<?php  echo $_SESSION['userNow'][10] ?>" name="ApMat" class="subtext2">
+                                <input id="ApPat" type="text" placeholder="Apellido Paterno" value="<?php  echo $_SESSION['userNow'][9] ?>" name="ApPat" class="subtext2">
+                                <input id="ApMat" type="text" placeholder="Apellido Materno" value="<?php  echo $_SESSION['userNow'][10] ?>" name="ApMat" class="subtext2">
                             </div>
 
 
                             <div class="input-contenedor">
                                 <i class="fas fa-key icon"></i>
-                                <input type="email" value="<?php  echo $_SESSION['userNow'][6] ?>" placeholder="Email" name="Email">
+                                <input id="Email" type="email" value="<?php  echo $_SESSION['userNow'][6] ?>" placeholder="Email" name="Email">
                             </div>
 
                             <div class="input-contenedor">
                                 <div class="input-contenedor">
                                     <i class="fas fa-id-badge icon"></i>
-                                    <input type="text" placeholder="Usuario" value="<?php  echo $_SESSION['userNow'][1] ?>" name="UsuarioRegister">
+                                    <input type="text" placeholder="Usuario" value="<?php  echo $_SESSION['userNow'][1] ?>" id="UsuarioRegister" name="UsuarioRegister">
 
                                 </div>
                                 <i class="fas fa-key icon"></i>
                                 <input type="password" autocomplete="on" placeholder="Contraseña" value="<?php  echo $_SESSION['userNow'][2] ?>" name="PasswordReg" id="PasswordReg">
-                                <input type="password" autocomplete="on" placeholder="Nueva Contraseña" value="<?php  echo $_SESSION['userNow'][2] ?>" class="subtext1" name="PasswordReg2">
+                                <input type="password" autocomplete="on" placeholder="Nueva Contraseña" value="<?php  echo $_SESSION['userNow'][2] ?>" class="subtext1" name="PasswordReg2" id="PasswordReg2">
 
                             </div>
                             </br>
@@ -127,7 +127,7 @@
 
                             </div>
                             </br><input type="submit" value="Cambiar" class="buttonPopup" id="BotonRegistro" onclick="cambiarDatosUser();">
-
+                        </div>
                     </form>
                 </div>
             </div>

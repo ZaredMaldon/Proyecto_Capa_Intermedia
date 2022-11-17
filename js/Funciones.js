@@ -15,27 +15,15 @@ function salir(){
         }
     });
 }
-function cambiarDatosUser(){
-    var formulario=document.getElementById('ModificarUsuario');
 
-
-    formulario.addEventListener("submit",function(){
+function readURL(input,idImg) {//Cambia la imagen de una etiquta img
+    if (input.files && input.files[0]) { //Revisamos que el input tenga contenido
+      var reader = new FileReader(); //Leemos el contenido
+      reader.onload = function(e) { //Al cargar el contenido lo pasamos como atributo de la imagen de arriba
+        $(idImg).attr('src', e.target.result);
+    }
     
-        var datos=new FormData(formulario);
-        
-        //Enviamos al php la info
-        $.ajax({
-            type:'POST', //aqui puede ser igual get
-            url: '../Controller/FuncionesExecute.php',//aqui va tu direccion donde esta tu funcion php
-            data: {opc:3},//aqui tus datos
-            success:function(data){
-                console.log(data);
-            },
-            error:function(data){
-                //var datos=JSON.parse(data);
-                console.log('fallo');
-            //lo que devuelve si falla tu archivo index.php
-            }
-        });
-    });
+    reader.readAsDataURL(input.files[0]);
+    }
 }
+
