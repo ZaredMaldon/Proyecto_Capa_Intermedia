@@ -42,23 +42,39 @@ class UsuarioDao{
         }
     }
 
-    public function editar($_id,$Usuario,$Email,$Imagen,$Nombres,$APat,$AMat,$Fecha_Nacimiento,$Sexo,$Rol,$Password){
+    public function editar($_id,$Usuario,$Email,$Nombres,$APat,$AMat,$Password,$Imagen,$Rol,$Tipo){
         try{
             $msql=$this->conexion;
-            $msql->query("CALL sp_Usuario(3,'{$_id}','{$Usuario}','{$Password}',{$Rol},'{$Email}','{$Imagen}','{$Nombres}','{$APat}','{$AMat}','{$Fecha_Nacimiento}',{$Sexo});");
+            $msql->query("CALL sp_Usuario(3,'{$_id}','{$Usuario}','{$Password}',{$Rol},'{$Email}','{$Imagen}','{$Nombres}','{$APat}','{$AMat}',null,null,'{$Tipo}');");
             $msql->close();
-            echo json_encode("Se edito exitosamente el Usuario ".$Usuario);
+            self::update_Session($Usuario,$Password);
+            echo json_encode("Se edito exitosamente el Usuario: ".$Usuario);
         }catch(Exception $e){
             echo json_encode("Excepcion: ".$e->getMessage());
         }
     }
 
-    public function get_User($_id){
-        $msql=$this->conexion;
-        $execute=$msql->query("SELECT * FROM Users where id={$_id}");
-        $usuarioNow=$execute->fetch_all(PDO::FETCH_ASSOC);
-        $msql->close();
-        return $usuarioNow;
+    private function update_Session($User,$Password){
+        //session_start();
+        if(session_status()==PHP_SESSION_ACTIVE){
+            session_destroy();
+        }
+        $conexion=new Conectar();
+        $con=$conexion->conectar();
+        $consulta="SELECT u.idUsuario,u.Usuario,u.Contrasenia,u.Tipo,u.Fk_Rol,r.Rol,u.Email,p.Imagen,p.Nombres,p.APat,p.AMat,p.Fecha_Nacimiento,p.Sexo as idSexo,s.Sexo,p.Fecha_ingreso,u.Estatus FROM Usuarios u
+        INNER JOIN Personas p on u.idUsuario=p.Fk_Usuario
+        INNER JOIN Roles r on u.Fk_Rol=r.idRol
+        INNER JOIN Sexo s on p.Sexo=s.idSexo
+        where (Usuario='$User' and Contrasenia='$Password') and (Estatus=1);";
+        $resultado=$con->query($consulta);
+        //$filas=mysqli_num_rows($resultado);
+        session_start();
+        while($fila=mysqli_fetch_array($resultado)){
+            $_SESSION['userNow']= array($fila['idUsuario'],$fila['Usuario'],$fila['Contrasenia'],$fila['Tipo'],$fila['Fk_Rol'],$fila['Rol'],$fila['Email'],$fila['Imagen'],$fila['Nombres'],$fila['APat'],$fila['AMat'],$fila['Fecha_Nacimiento'],$fila['idSexo'],$fila['Sexo'],$fila['Fecha_ingreso'],$fila['Estatus']);
+        }
+
+        mysqli_free_result($resultado);
+        mysqli_close($con);
     }
 }
 

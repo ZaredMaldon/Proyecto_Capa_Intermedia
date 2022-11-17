@@ -35,7 +35,7 @@ END IF;
 IF(Opc=3) then /*MODIFICAR*/
 START TRANSACTION;
 	UPDATE Usuarios set Usuario=_usuario,Contrasenia=_password,Email=_email where idUsuario=_id;
-    UPDATE Personas set Nombres=_nombres,APat=_appat,AMat=_apmat,Fecha_Nacimiento=_nacimiento where FK_Usuario=_id;
+    UPDATE Personas set Nombres=_nombres,APat=_appat,AMat=_apmat where FK_Usuario=_id;
 	If @@error_count = 0 then
 		Commit;
 	end if ;
