@@ -80,7 +80,7 @@ function ajax_get_json(){
             products.push({fyh:'Ventas '+item.Ventas,category:categoria,productName: item.NombreProducto,price: item.Precio,Calificacion: item.Valoracion}); 
             console.log(products);
         });
-        Cartas(products);
+        Cartas(products);//para mostrar los productos
         
       }else{
         console.log('hay algun error');

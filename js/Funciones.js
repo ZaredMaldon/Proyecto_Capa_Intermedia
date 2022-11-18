@@ -27,3 +27,5 @@ function readURL(input,idImg) {//Cambia la imagen de una etiquta img
     }
 }
 
+
+
