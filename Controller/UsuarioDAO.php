@@ -8,7 +8,7 @@ class UsuarioDao{
     {   
         $this->conexion=new Conectar();
         $this->conexion=$this->conexion->conectar();
-        
+         
     }
 
     

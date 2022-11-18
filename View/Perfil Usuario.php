@@ -20,7 +20,7 @@
             <a href="../index.php">Inicio</a>
             <a href="../NUEVOS HTML/Compras.html">Compra</a>
             <a href="../NUEVOS HTML/Consulta_ventas.html">Ventas</a>
-            <a href="../NUEVOS HTML/Consulta_pedidos.html">Compras</a>
+            <a href="../NUEVOS HTML/Consulta_pedidos.html">Pedidos</a>
             <?php session_start(); ?>
             <a href="#"><?php echo $_SESSION['userNow'][1]; ?></a>
             <a id="Salir-btn" name="SalirBtn" class="link" onclick="salir();">Cerrar Sesion</a>

@@ -20,7 +20,7 @@
             <a href="index.php">Inicio</a>
             <a href="View/Compras.html">Compra</a>
             <a href="View/Consulta_ventas.html">Ventas</a>
-            <a href="View/Consulta_pedidos.html">Compras</a>
+            <a href="View/Consulta_pedidos.html">pedidos</a>
             <?php
             session_start();
             if(isset($_SESSION['userNow'])){

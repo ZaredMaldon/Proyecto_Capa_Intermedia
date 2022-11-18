@@ -1,6 +1,6 @@
 <?php
 require_once("../Controller/UsuarioDAO.php");
-$usuarioDao=new UsuarioDao(); 
+$usuarioDao=new UsuarioDao();
 
 $_Usuario = $_POST['UsuarioRegister'];
 $_Email = $_POST['Email'];
