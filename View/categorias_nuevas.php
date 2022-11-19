@@ -46,7 +46,7 @@
         </div>
         
         <!-- Modal -->
-        <form class="modal fade" method="POST" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form class="modal fade" action="../Controller/categoria/select.php" method="POST" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -64,7 +64,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+<<<<<<< Updated upstream
                 <button type="submit" id="add" class="btn btn-primary">Agregar</button>
+=======
+                <button type="click" onclick="" id="add" class="btn btn-primary">Agregar</button>
+>>>>>>> Stashed changes
             </div>
             </div>
         </div>

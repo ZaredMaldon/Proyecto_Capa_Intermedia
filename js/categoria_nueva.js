@@ -9,8 +9,8 @@ let add = document.getElementById("add");
   e.preventDefault();
   formValidation();
 }); */
-
-form.addEventListener("submit",function(e){
+//**** */
+/* form.addEventListener("submit",function(e){
   e.preventDefault();
   if(formValidation()){ 
   
@@ -36,7 +36,7 @@ form.addEventListener("submit",function(e){
 
   }) 
 }
-});
+}); */
  
 
 let formValidation = () => {
@@ -118,17 +118,6 @@ let deleteTask = (e) => {
 };
 
  let editTask = () => {
-  //Enviamos al php la info
-  fetch('../Controller/categoria/select.php',{
-    method:'POST',
-    body: JSON.stringify({id: 25})
-  })
-  .then(res=>res.json())
-  .then(data=>{
-    
-    console.log("data");
-      
-  })
 
 /*   let selectedTask = e.parentElement.parentElement;
   
