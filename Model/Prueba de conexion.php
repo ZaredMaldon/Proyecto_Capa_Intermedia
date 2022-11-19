@@ -11,5 +11,5 @@ if($filas){
     echo "Conexion realizada ".$filas;
 }else{
     echo "No fue posible realizar la conexion";
-}
+} 
 ?>

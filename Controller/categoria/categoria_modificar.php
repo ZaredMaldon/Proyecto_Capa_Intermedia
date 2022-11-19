@@ -1,11 +1,11 @@
 <?php
-require_once("../Controller/CategoriaDAO.php");
+require_once("../CategoriasDAO.php");
+
 $categoriaDao=new CategoriaDao();
 
+$_ID = $_POST['id']
 $_Categoria = $_POST['Categoria'];
 $_Descripcion = $_POST['Descripcion'];
 
-
-$categoriaDao->agregar($_Categoria,$_Descripcion);
-
-?>
+$categoriaDao->modificar($_Categoria,$_Descripcion);
+?>  
