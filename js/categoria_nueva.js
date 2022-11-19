@@ -40,6 +40,8 @@ form.addEventListener("submit",function(e){
  
 
 let formValidation = () => {
+
+  
   if (textInput.value === "" & textarea.value === "") {
     console.log("failure");
     msg.innerHTML = "Lista en blanco";
@@ -56,6 +58,8 @@ let formValidation = () => {
     return true;
   }
 };
+
+
 
 let data = [{}];
 
@@ -81,11 +85,9 @@ let createTasks = () => {
           
           <span class="options">
           
-          <a href= "categorias.php?
-          id="<?php echo $mostrar['0'] ?> &
-          Categoria=<?php echo $mostrar['1'] ?> $
-          Descripcion=<?php echo $mostrar['2'] ?>"
-          class="fas fa-edit"></a> 
+          <i onClick= "editTask():parent.location='categorias.php'" 
+          class="fas fa-edit"></i> 
+
           <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
           </span>
         </div>
@@ -107,7 +109,6 @@ let createTasks = () => {
   resetForm();
 };
 
-
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
   data.splice(e.parentElement.parentElement.id, 1);
@@ -116,13 +117,23 @@ let deleteTask = (e) => {
   
 };
 
- let editTask = (e) => {
+ let editTask = () => {
+  //Enviamos al php la info
+  fetch('../Controller/categoria/select.php',{
+    method:'POST',
+    body: JSON.stringify({id: 25})
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    
+    console.log("data");
+      
+  })
 
-
-  let selectedTask = e.parentElement.parentElement;
+ /*  let selectedTask = e.parentElement.parentElement;
   
   textInput.value = selectedTask.children[0].innerHTML;
-  textarea.value = selectedTask.children[1].innerHTML;
+  textarea.value = selectedTask.children[1].innerHTML; */
 }; 
 
 let resetForm = () => {

@@ -64,7 +64,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" id="add" class="btn btn-primary">Agregar</button>
+                <button type="click" onclick="editTask();" id="add" class="btn btn-primary">Agregar</button>
             </div>
             </div>
         </div>

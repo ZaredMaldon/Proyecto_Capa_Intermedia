@@ -55,5 +55,25 @@ class CategoriaDao{
         } 
 
     }
+
+    public function mostrar_id($ID){
+        try{
+           
+            $msql=$this->conexion;
+            $execute=$msql->query("CALL sp_Categorias(4, {$ID},null,null,null);");
+            if($execute){
+                echo json_encode($execute);
+                
+            }else{
+                echo json_encode("0");
+            }
+            $msql->close();
+            
+            
+        }catch(Exception $e){
+            echo json_encode("0");
+        } 
+
+    }
 }
 ?>

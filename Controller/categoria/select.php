@@ -1,7 +1,10 @@
 <?php
 
-$msql=$this->conexion;
-$msql = "SELECT idCategoria, Categoria, Descripcion FROM Categorias ";
+require_once("../CategoriasDAO.php");
 
+$categoriaDao=new CategoriaDao();
 
+$Id=$_POST['id'];
+
+$categoriaDao->mostrar_id($Id);
 ?>

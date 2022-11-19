@@ -25,7 +25,7 @@
     $_Categoria = $_GET['textInput'];
     $_Descripcion = $_GET['textarea'];
     ?>
-
+  
   <header>
     <nav>
         <a href="categorias_nuevas.php">Regresar</a>
