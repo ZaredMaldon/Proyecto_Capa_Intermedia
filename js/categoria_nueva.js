@@ -85,7 +85,7 @@ let createTasks = () => {
           
           <span class="options">
           
-          <i onClick= "editTask():parent.location='categorias.php'" 
+          <i onClick= "editTask();parent.location='categorias.php'" 
           class="fas fa-edit"></i> 
 
           <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
@@ -130,7 +130,7 @@ let deleteTask = (e) => {
       
   })
 
- /*  let selectedTask = e.parentElement.parentElement;
+/*   let selectedTask = e.parentElement.parentElement;
   
   textInput.value = selectedTask.children[0].innerHTML;
   textarea.value = selectedTask.children[1].innerHTML; */

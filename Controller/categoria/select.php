@@ -6,5 +6,6 @@ $categoriaDao=new CategoriaDao();
 
 $Id=$_POST['id'];
 
-$categoriaDao->mostrar_id($Id);
+echo json_encode($Id);
+/* $categoriaDao->mostrar_id($Id); */
 ?>
