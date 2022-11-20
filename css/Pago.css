@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  --card-color: #697e20;
+  --text-color: #e1e1e1;
+}
+ 
+/* body {
+  font-family: "Roboto", sans-serif;
+  background-image: url(https://eveniments.es/wp-content/uploads/2019/03/fondos-abstractos-para-paginas-web-wallpaper-hd-para-bajar-gratis-elegant-3d-abstract-wallpaper-2018-wallpapers-hd-en-2018-of-fondos-abstractos-para-paginas-web-wallpaper-hd-para-bajar-grati.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+} */
+
+body{
+  background: url(fondoLogin.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'open sans';
+}
+
+nav{
+  text-align: right;
+  padding: 30px 40px 0 0;
+}
+
+nav > a{
+  color:#fff;
+  font-weight: 300;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+nav > a:hover{
+  text-decoration: underline;
+}
+
+.avatar{
+  position: relative;
+  top: -10px; /* ajustar los valores para mover la imagen */
+  left: -240px;
+  width: 300px;
+  height: 130px;
+}
+
+div.absolute {
+  position: absolute;
+  top: 160px;
+  right: 225px;
+  width: 870px;
+  height: 100px;
+  z-index: 100;
+  font-size: 40px;
+  color :rgb(193, 255, 151);
+}
+
+#contenedor{
+  padding-left:20px;
+  top: 50px;
+  border-radius: 20px;
+  background-color: rgba(45, 71, 99,.9);
+  width: 850px;
+  height: 450px;
+}
+
+.tips {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: #f1f1f1;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 2px 15px;
+}
+
+.pays {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 680px;
+}
+.pays .col1 {/**/
+  perspective: 1000;
+  transform-style: preserve-3d;
+}
+.pays .col1 .card {
+  position: relative;
+  width: 420px;
+  height: 250px;
+  margin-bottom: 85px;
+  margin-right: 10px;
+  border-radius: 17px;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1);
+  transition: all 1s;
+  transform-style: preserve-3d;
+}
+.pays .col1 .card .front {
+  position: absolute;
+  background: var(--card-color);
+  border-radius: 17px;
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
+  transition: background 0.3s;
+  z-index: 50;
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.pays .col1 .card .front .type {
+  position: absolute;
+  width: 75px;
+  height: 45px;
+  top: 20px;
+  right: 20px;
+}
+.pays .col1 .card .front .type img {
+  width: 100%;
+  float: right;
+}
+.pays .col1 .card .front .card_number {
+  position: absolute;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  top: 110px;
+  color: var(--text-color);
+  word-spacing: 3px;
+  transition: color 0.5s;
+}
+.pays .col1 .card .front .date {
+  position: absolute;
+  bottom: 40px;
+  right: 55px;
+  width: 90px;
+  height: 35px;
+  color: var(--text-color);
+  transition: color 0.5s;
+}
+.pays .col1 .card .front .date .date_value {
+  font-size: 12px;
+  position: absolute;
+  margin-left: 22px;
+  margin-top: 12px;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.5s;
+}
+.pays .col1 .card .front .date:after {
+  content: "MONTH / YEAR";
+  position: absolute;
+  display: block;
+  font-size: 7px;
+  margin-left: 20px;
+}
+.pays .col1 .card .front .date:before {
+  content: "valid \athru";
+  position: absolute;
+  display: block;
+  font-size: 8px;
+  white-space: pre;
+  margin-top: 8px;
+}
+.pays .col1 .card .front .fullname {
+  position: absolute;
+  font-size: 20px;
+  bottom: 40px;
+  color: var(--text-color);
+  transition: color 0.5s;
+}
+.pays .col1 .card .back {
+  position: absolute;
+  width: 100%;
+  border-radius: 17px;
+  height: 100%;
+  background: var(--card-color);
+  transform: rotateY(180deg);
+}
+.pays .col1 .card .back .magnetic {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 25px;
+}
+.pays .col1 .card .back .bar {
+  position: absolute;
+  width: 80%;
+  height: 37px;
+  background: rgba(255, 255, 255, 0.7);
+  left: 10px;
+  margin-top: 100px;
+}
+.pays .col1 .card .back .seccode {
+  font-size: 13px;
+  color: var(--text-color);
+  font-weight: 500;
+  position: absolute;
+  top: 100px;
+  right: 40px;
+}
+.pays .col1 .card .back .chip {
+  bottom: 45px;
+  left: 10px;
+}
+.pays .col1 .card .back .disclaimer {
+  position: absolute;
+  width: 65%;
+  left: 80px;
+  color: #f1f1f1;
+  font-size: 8px;
+  bottom: 55px;
+}
+.pays .col2 input {
+  display: block;
+  width: 260px;
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin: 7px;
+  font-size: 17px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  transition: background 0.5s;
+  color : white;
+}
+.pays .col2 input:focus {
+  outline-width: 0;
+  background: rgba(31, 134, 252, 0.15);
+  transition: background 0.5s;
+}
+.pays .col2 label {
+  padding-left: 8px;
+  font-size: 15px;
+  color: rgb(235, 242, 250);
+}
+.pays .col2 .ccv {
+  width: 40%;
+}
+.pays .col2 .buy {
+  width: 260px;
+  height: 50px;
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: none;
+  background: rgb(103, 148, 54);
+  color: white;
+  font-size: 20px;
+  transition: background 0.4s;
+  cursor: pointer;
+}
+.pays .col2 .buy i {
+  font-size: 20px;
+}
+.pays .col2 .buy:hover {
+  background: #3594A9;
+  transition: background 0.4s;
+}
+
+.chip {
+  position: absolute;
+  width: 55px;
+  height: 40px;
+  background: #bbb;
+  border-radius: 7px;
+}
+.chip:after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 25px;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #ddd;
+}

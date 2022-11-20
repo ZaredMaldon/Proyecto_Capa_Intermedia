@@ -15,17 +15,19 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/PerfilUsuario.css">
     <link rel="stylesheet" href="../css/PaginaPrincipal.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css"> 
 
 </head>
 
 <body>
   <header>
     <nav>
+        <a href="carrito.php" class="nav-link text-uppercase font-weight-bold js-scroll-trigger"><img src="../img/Carrito.png" /></a>
         <a href="../index.php">Inicio</a>
         <a href="../View/Compras.html">Compra</a>
         <a href="../View/Consulta_ventas.html">Ventas</a>
         <a href="../View/Consulta_pedidos.html">Pedidos</a>
+        
         
        <!-- agregar el inicio de sesion despues -->
         <a id="Salir-btn" name="SalirBtn" class="link" onclick="salir();">Cerrar Sesion</a>
@@ -46,7 +48,7 @@
         </div>
         
         <!-- Modal -->
-        <form class="modal fade" action="../Controller/categoria/select.php" method="POST" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form class="modal fade" method="POST" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -64,11 +66,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-<<<<<<< Updated upstream
                 <button type="submit" id="add" class="btn btn-primary">Agregar</button>
-=======
-                <button type="click" onclick="" id="add" class="btn btn-primary">Agregar</button>
->>>>>>> Stashed changes
+
             </div>
             </div>
         </div>
@@ -76,7 +75,39 @@
 
     <h5 class="text-center my-3">Listas</h5>
 
+    <!-- Modal 2 modificar -->
+
+    <!-- <div id="addNew" data-bs-toggle="modal2" data-bs-target="#form2">
+
+    <form class="modal fade" method="POST" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">NUEVA LISTA</h5>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Nombre categoria</p>
+                <input type="text" class="form-control" name="Categoria" id="textInput">
+                <div id="msg"></div>
+                <br>
+                <p>Descripción</p>
+                <textarea name="Descripcion" class="form-control" id="textarea" cols="30" rows="5"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" id="add" class="btn btn-primary">Agregar</button>
+
+            </div>
+            </div>
+        </div>
+    </form> -->
+
+    
+
     <div id="tasks">
+
     <p> <?php 
          session_start();
 
@@ -114,7 +145,6 @@
 <script src="../Script/jquery.js"></script>
 <script src="../js/categoria_nueva.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
 </script>
 </body>
 </html>

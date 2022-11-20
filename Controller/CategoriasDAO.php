@@ -41,11 +41,7 @@ class CategoriaDao{
             $msql=$this->conexion;
             $execute=$msql->query("CALL sp_Categorias(3, {$ID},'{$Categoria}','{$Descripcion}',null);");
             if($execute){
-<<<<<<< Updated upstream
                 echo json_encode("1");
-=======
-                //echo json_encode("1");
->>>>>>> Stashed changes
                 
             }else{
                 echo json_encode("0");
@@ -59,14 +55,21 @@ class CategoriaDao{
 
     }
 
-    public function mostrar_id($ID){
+    public function mostrar_id($Id){
         try{
            
             $msql=$this->conexion;
-            $execute=$msql->query("CALL sp_Categorias(4, {$ID},null,null,null);");
+            $execute=$msql->query("CALL sp_Categorias(4, {$Id},null,null,null);");
             if($execute){
-                echo json_encode($execute);
-                
+                while($fila=mysqli_fetch_array($execute)){
+                    echo json_encode($fila);
+                  /*   ?>
+                    <script>
+                        console.log(<?php echo json_encode($fila)?>);
+                    </script>
+                    <?php */ 
+                }
+                 
             }else{
                 echo json_encode("0");
             }
@@ -74,7 +77,29 @@ class CategoriaDao{
             
             
         }catch(Exception $e){
-            echo json_encode("0");
+            echo json_encode("Exception: ".$e);
+        } 
+
+    }
+
+    public function mostrar_all(){
+        try{
+           
+            $msql=$this->conexion;
+            $execute=$msql->query("CALL sp_Categorias(5, null,null,null,null);");
+            if($execute){
+                while($fila=mysqli_fetch_array($execute)){
+                    echo json_encode($fila);
+                }
+                 
+            }else{
+                echo json_encode("0");
+            }
+            $msql->close();
+            
+            
+        }catch(Exception $e){
+            echo json_encode("Exception: ".$e);
         } 
 
     }

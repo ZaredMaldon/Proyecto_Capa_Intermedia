@@ -9,8 +9,8 @@ let add = document.getElementById("add");
   e.preventDefault();
   formValidation();
 }); */
-//**** */
-/* form.addEventListener("submit",function(e){
+
+form.addEventListener("submit",function(e){
   e.preventDefault();
   if(formValidation()){ 
   
@@ -36,12 +36,9 @@ let add = document.getElementById("add");
 
   }) 
 }
-}); */
- 
+});
 
 let formValidation = () => {
-
-  
   if (textInput.value === "" & textarea.value === "") {
     console.log("failure");
     msg.innerHTML = "Lista en blanco";
@@ -58,8 +55,6 @@ let formValidation = () => {
     return true;
   }
 };
-
-
 
 let data = [{}];
 
@@ -81,12 +76,10 @@ let createTasks = () => {
     return (tasks.innerHTML += `
     <div id=${y}>
           <span class="fw-bold">${x.text}</span>
-          <p>${x.description}</p>
-          
+          <p>${x.description}</p>  
           <span class="options">
           
-          <i onClick= "editTask();parent.location='categorias.php'" 
-          class="fas fa-edit"></i> 
+          <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
 
           <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
           </span>
@@ -94,20 +87,24 @@ let createTasks = () => {
     `);
   });
 
-/*  <i onClick= "parent.location='categorias.php'" 
-          id="<?php echo $mostrar['0'] ?> &
-          Categoria=<?php echo $mostrar['1'] ?> $
-          Descripcion=<?php echo $mostrar['2'] ?>"
-          class="fas fa-edit"></i> 
-              
-           <a  href= "categorias.php" 
-          id= "editTask(this)"
-          class="fas fa-edit"></a>
-          */
+     /*  <i onClick= "mostrar_Categoria_id(id);parent.location='categorias.php'"            
+              class="fas fa-edit"></i> 
+                  
+              <i onClick= "mostrar_Categoria_id(id);parent.location='categorias.php'" class="fas fa-edit"></i> 
+                  <a  href= "categorias.php" 
+                  id= "editTask(this)"
+                  class="fas fa-edit"></a> 
+               <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>    
+         
+               <a  href= "categorias.php" 
+         
+          action="../Controller/categoria/select.php" class="fas fa-edit"></a>
 
-//mostrarPopup()...."editTask(this)" data-bs-toggle="modal"
+              */
+      //mostrarPopup()...."editTask(this)" data-bs-toggle="modal"
   resetForm();
 };
+
 
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
@@ -117,12 +114,12 @@ let deleteTask = (e) => {
   
 };
 
- let editTask = () => {
+ let editTask = (e) => {
 
-/*   let selectedTask = e.parentElement.parentElement;
+  let selectedTask = e.parentElement.parentElement;
   
   textInput.value = selectedTask.children[0].innerHTML;
-  textarea.value = selectedTask.children[1].innerHTML; */
+  textarea.value = selectedTask.children[1].innerHTML; 
 }; 
 
 let resetForm = () => {

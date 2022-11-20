@@ -11,7 +11,7 @@
             try{
                 $user="root";
                 //$password="Zomrromr28122801";
-                $password="Zomrromr";
+                $password="123456";
                 $server="localhost";
                 $DataBase="Progra_Web_CapaIntermedia";
 
