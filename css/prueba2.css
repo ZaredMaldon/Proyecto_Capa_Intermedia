@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(fondoLogin.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'open sans';
+}
+
+header {
+    width: 100%;
+    height: 200px;
+    background: #577fc0;
+    background: linear-gradient(to right, hsla(2, 45%, 52%, 0.358), hsla(213, 95%, 50%, 0.39)), url(../img/4.jpg);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 40px 0 0;
+}
+
+nav > a{
+    color:#fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+nav > a:hover{
+    text-decoration: underline;
+}
+
+.avatar{
+    position: relative;
+    top: -72px; /* ajustar los valores para mover la imagen */
+    left: 40px;
+    width: 268px;
+    height: 130px;
+}
+
+#blog-home h2{
+    color: rgb(141, 188, 230);
+}
+
+/*.............. Cart container...............*/
+
+#cart-container {
+    overflow-x:auto;
+}
+
+#cart-container table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart-container table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+
+}
+
+#cart-container table thead{
+ font-weight: 700;
+    
+}
+
+#cart-container table thead td{
+    background: #7e9ccce3;
+    color: rgb(32, 68, 91);
+    border: none;
+    padding: 6px 0;
+       
+}
+
+#cart-container table td{
+    border: 1px solid #f2f2f2;
+    text-align: center;
+}
+
+#cart-container table td:nth-child(1){
+   width: 100px;
+}
+
+#cart-container table td:nth-child(2),
+#cart-container table td:nth-child(3){
+    width: 200px;
+}
+
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5),
+#cart-container table td:nth-child(6){
+    width: 175px;
+}
+
+#cart-container table tbody img{
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+}
+
+#cart-bottom .comentario>div,
+#cart-bottom .total>div {
+    border: 1px solid #b6b3b3;
+}
+
+#cart-bottom .comentario h5,
+#cart-bottom .total h5 {
+background: #7e9ccce3;
+color: rgb(32, 68, 91);
+border: none;
+padding: 6px 12px;
+font-weight: 700;
+}
+
+#cart-bottom .comentario button{
+    color: #cadeff;
+    background-color: #44709b;
+    margin: 0 0 10px 12px;
+    padding: 0 12px;
+}
+
+#cart-bottom .comentario input{
+    padding: 5px 26px;
+}
+
+#cart-bottom .comentario input{
+    height: 35px;
+}
+
+#cart-bottom .comentario textarea{
+    padding: 10px 80px;
+}
+
+#cart-bottom .comentario textarea{
+    height: 60px;
+    margin: 0 0 15px 15px;
+    background-color: #a4c2e1;
+    border-style:initial;
+}
+
+#cart-bottom .comentario input{
+    margin: 0 0 -25px 15px;
+    background-color: #a4c2e1;
+    border-style:initial;
+}
+
+#cart-bottom .total div>div{
+   padding: 0 12px;
+}
+
+#cart-bottom .total h6{
+    color: #0f2a57;
+}
+
+.second-hr {
+    background: #b6b3b3;
+    width: 100%;
+    height: 1px;
+}
+
+.third-hr {
+    background: #b6b3b3;
+    width: 100%;
+    height: 13px;
+    margin: 0 12px 50px 0;
+}
+
+#cart-bottom .total button{
+    margin: 0 12px 30px 0;
+    position: relative;
+    right: -300px;
+    padding: 10px 50px;
+ }
+ 
+
+                /*CAMBIO DE TAMAÑO*/
+
+                @media screen and (max-width:900px){
+                    header{
+                        background-position: center;
+                    }
+                
+                    .contenedor-sobre-nosotros{
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                
+                    .sobre-nosotros .contenido-textos{
+                        width: 90%;
+                    }
+                
+                    .imagen-about-us{
+                        width: 90%;
+                    }
+                
+                    /* Galeria */
+                
+                    .imagen-port{
+                        width: 44%;
+                    }
+                
+                    /* Clientes */
+                
+                    .cards{
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                
+                    .cards .card{
+                        width: 90%;
+                    }
+                
+                    .cards .card:first-child{
+                        margin-bottom: 30px;
+                    }
+                
+                    /* servicios */
+                
+                    .servicio-cont{
+                        justify-content: center;
+                        flex-direction: column;
+                    }
+                
+                    .servicio-ind{
+                        width: 100%;
+                        text-align: center;
+                    }
+                
+                    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+                        margin-bottom: 60px;
+                    }
+                
+                    .servicio-ind img{
+                        width: 90%;
+                    }
+                }
+                
+                @media screen and (max-width:500px){
+                    nav{
+                        text-align: center;
+                        padding: 30px 0 0 0;
+                    }
+                
+                    nav > a{
+                        margin-right: 5px;
+                    }
+                
+                    .textos-header h1{
+                        font-size: 35px;
+                    }
+                
+                    .textos-header h2{
+                        font-size: 20px;
+                    }
+                
+                    /* quienes somos */
+                
+                    .imagen-about-us{
+                        margin-bottom: 60px;
+                        width: 99%;
+                    }
+                
+                    .sobre-nosotros .contenido-textos{
+                        width: 95%;
+                    }
+                
+                    /* Galeria */
+                
+                    .imagen-port{
+                        width: 95%;
+                    }
+                
+                    /* Clientes */
+                
+                    .cards .card{
+                        height: 450px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                
+                    .cards .card img{
+                        width: 90px;
+                        height: 90px;
+                    }
+                
+                    /* Footer */
+                
+                    .contenedor-footer{
+                        flex-direction: column;
+                        border: none;
+                    }
+                
+                    .content-foo{
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+                
+                    .content-foo h4{
+                        border: none;
+                    }
+                
+                    .content-foo p{
+                        color: rgb(239, 228, 228);
+                        border-bottom: 1px solid #f2f2f2;
+                        padding-bottom: 20px;
+                    }
+                
+                    .titulo-final{
+                        font-size: 20px;
+                    }
+                }
