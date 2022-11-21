@@ -30,7 +30,7 @@ function Cartas(products) {
     //nombre del prodcuto
     let name = document.createElement("h5");
     name.classList.add("product-name");
-    name.innerText = i.productName.toUpperCase();
+    name.innerText = i.Nombre.toUpperCase();
     container.appendChild(name);
     //precio
     let price = document.createElement("h6");
@@ -67,17 +67,17 @@ function ajax_get_json(){
     const xhr=new XMLHttpRequest();
     method='GET',
     //url='http://localhost:82/Proyecto%20Capa%20Intermedia/Proyecto_Capa_Intermedia/DAO/RespuestaApi.php';
-    url='http://localhost/Proyecto_Capa_Intermedia/DAO/RespuestaApi.php';
+    url='http://127.0.0.1:8000/api/productos/';
     xhr.open(method,url,true);
     xhr.onload=function(){
       if(this.status===200){
         let datos=[];
         datos=JSON.parse(this.responseText);
-        console.log(datos.items);
+        console.log(datos);
         var num=0;
-        datos.items.forEach(function(item){
+        datos.forEach(function(item){
           var categoria=DarCategoria(item.Fk_Categoria);
-            products.push({fyh:'Ventas '+item.Ventas,category:categoria,productName: item.NombreProducto,price: item.Precio,Calificacion: item.Valoracion}); 
+            products.push({fyh:'Ventas '+item.Ventas,category:categoria,Nombre: item.Nombre,price: item.Precio,Calificacion: item.Valoracion}); 
             console.log(products);
         });
         Cartas(products);//para mostrar los productos

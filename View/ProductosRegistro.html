@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <div class="Register">
+        <h2>Registrar</h2>
+        <form id="Productos_Registro" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="Precio" placeholder="Precio">
+            <select id="categoria" name="categoria">
+                <option value="1">Categoria 1</option>
+                <option value="2">Otra categoria</option>
+            </select>
+            <input type="file" name="Imagenes" id="idImagen" multiple>
+            <input type="file" name="Video">
+            <input type="text" name="Cantidad" placeholder="Cantidad">
+            <input type="text" name="Valoracion" placeholder="Valoracion"> 
+            <input type="submit" id="buttonProductos" onclick="">
+        </form>
+    </div>
+    <div class="Update">
+        <h2>Modificar</h2>
+        <form id="Productos_Update" method="PUT">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="Precio" placeholder="Precio">
+            <select id="categoria">
+                <option value="1">Categoria 1</option>
+                <option value="2">Otra categoria</option>
+            </select>
+            <input type="file" name="Imagenes[]" id="idImagen" multiple>
+            <input type="file" name="Video">
+            <input type="text" name="Cantidad" placeholder="Cantidad">
+            <input type="text" name="Valoracion" placeholder="Valoracion"> 
+            <input type="submit" id="buttonProductos" onclick="">
+        </form>
+    </div>
+    <script src="../Script/jquery.js"></script>
+    <script src="../js/Funciones.js"></script>
+    <script src="../js/Productos.js"></script>
+</body>
+</html>

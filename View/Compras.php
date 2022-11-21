@@ -1,3 +1,11 @@
+<?php 
+require_once("../Controller/ProductosDAO.php");
+$productosDao=new ProductoDao();
+session_start();
+$productos=array();
+$productos=$productosDao->mostrar();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +30,7 @@
       <a href="Compras.html">Compra</a>
       <a href="Consulta_ventas.html">Ventas</a>
       <a href="Consulta_pedidos.html">Compras</a>
-      <a href="Perfil Usuario.html">Ramonsito64</a>
+      <a href="Perfil Usuario.html"><?php echo $_SESSION['userNow'][1] ?></a>
       <a href="Login.html" id="Login-btn" class="link">Login</a>
     </nav>
 
