@@ -17,8 +17,9 @@ SELECT c.idCategoria, c.Categoria, c.Descripcion, u.Usuario  FROM Categorias c
     WHERE (c.idCategoria = 25) AND (c.Estatus = 1);
 
 Select*from PruebaProductos;
-
+DROP table PruebaProductos;
 DELETE FROM PruebaProductos WHERE id_prod IN (18, 19);
+
 /*Login*/
 SELECT u.idUsuario,u.Usuario,u.Contrasenia,u.Tipo,u.Fk_Rol,r.Rol,u.Email,p.Imagen,p.Nombres,p.APat,p.AMat,p.Fecha_Nacimiento,p.Sexo as idSexo,s.Sexo,p.Fecha_ingreso,u.Estatus FROM Usuarios u
 INNER JOIN Personas p on u.idUsuario=p.Fk_Usuario

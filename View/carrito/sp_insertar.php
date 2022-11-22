@@ -10,7 +10,7 @@
      if(!$rta){
         echo "No se inserto!";
      }else{
-        header("Location: carrito.php");
+      echo "Se inserto!";
      }
      
 ?>
