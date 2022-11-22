@@ -16,9 +16,8 @@
     <link rel="stylesheet" href="../css/PerfilUsuario.css">
     <link rel="stylesheet" href="../css/PaginaPrincipal.css">
     <link rel="stylesheet" href="../css/style.css">
-
+ 
 </head>
-
 
 
 <body>
@@ -39,10 +38,10 @@
 
     <h4 class="mb-3">EDITAR CATEGORIA</h4>
 
-     <div id="addNew" data-bs-toggle="modal" data-bs-target="#form2">
+       <!--  <div id="addNew" data-bs-toggle="modal">
         <span>Edite la categoria</span>
         <i class="fas fa-plus"></i>
-        </div>
+        </div> -->
         
 
         <form class="modal fade" method="POST" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

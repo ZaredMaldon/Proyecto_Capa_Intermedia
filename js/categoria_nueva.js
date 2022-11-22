@@ -8,7 +8,7 @@ let add = document.getElementById("add");
 /* form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
-}); */
+}); */ 
 
 form.addEventListener("submit",function(e){
   e.preventDefault();
