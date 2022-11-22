@@ -16,7 +16,7 @@ function ajax_get_json(){
     const xhr=new XMLHttpRequest();
     method='GET',
     //url='http://localhost:82/Proyecto%20Capa%20Intermedia/Proyecto_Capa_Intermedia/DAO/RespuestaApi.php';
-    url='http://127.0.0.1:8000/api/productos/';
+    url='https://apiproductos.zambiaa.com/api/productos';
     xhr.open(method,url,true);
     xhr.onload=function(){
       if(this.status===200){
