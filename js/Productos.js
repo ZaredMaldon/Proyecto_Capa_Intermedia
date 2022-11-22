@@ -44,7 +44,7 @@ formUpdate.addEventListener("submit",function(e){
 
 
 function mostrarTodos(){
-    fetch('http://127.0.0.1:8000/api/productos/')
+    fetch('https://apiproductos.zambiaa.com/api/productos')
     .then(response=>response.json())
     .then(data=>{
         console.log(data);

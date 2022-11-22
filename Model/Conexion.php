@@ -9,11 +9,11 @@
     class Conectar{
         public function conectar(){
             try{
-                $user="root";
+                $user="u840845621_root";
                 //$password="Zomrromr28122801";
-                $password="Zomrromr";
-                $server="localhost";
-                $DataBase="Progra_Web_CapaIntermedia";
+                $password="v:F|C1r6W#";
+                $server="31.170.160.1";
+                $DataBase="u840845621_pw_cintermedia";
 
                 $conectar=new mysqli($server, $user, $password, $DataBase);
 
