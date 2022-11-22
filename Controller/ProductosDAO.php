@@ -6,7 +6,7 @@ class ProductoDao{
 
     function __construct()
     {   
-        $this->url='http://127.0.0.1:8000/api/productos/';
+        $this->url='https://apiproductos.zambiaa.com/api/productos/';
         $this->ch=curl_init();
     }
 

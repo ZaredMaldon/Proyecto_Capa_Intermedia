@@ -2,7 +2,7 @@
 require_once("Conexion.php"); 
 $conexion=new Conectar();
 $con=$conexion->conectar();
-$resultado=$con->query("SELECT idUsuario,Usuario,Contrasenia FROM Usuarios;");
+$resultado=$con->query("SELECT * FROM usuarios;");
 //$consulta="SELECT idUsuario,Usuario,Contrasenia FROM Usuarios;";
 //$resultado=mysqli_query($con,$consulta);
 $filas=mysqli_num_rows($resultado);
