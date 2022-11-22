@@ -1,57 +1,6 @@
 
-function Cartas(products) {
-  for (let i of products) {
-    //console.log(i.category);
-    //Creamos la tarjeta
-    let card = document.createElement("div");
-    //Card should have category and should stay hidden initially
-    card.classList.add("card", i.category, "hide");
-    //image div
-    /*let imgContainer = document.createElement("div");
-    imgContainer.classList.add("image-container");
-    //img tag
-    let image = document.createElement("img");
-    image.setAttribute("src", i.image);
-    imgContainer.appendChild(image);
-    card.appendChild(imgContainer); */
-    //container
-    let container = document.createElement("div");
-    container.classList.add("container");
-      //fecha
-      let fecha = document.createElement("h3");
-      fecha.classList.add("product-fecha");
-      fecha.innerText = i.fyh.toUpperCase();
-      container.appendChild(fecha);
-    //Categoria
-    let Categoria = document.createElement("h4");
-    Categoria.classList.add("product-categoria");
-    Categoria.innerText = i.category.toUpperCase();
-    container.appendChild(Categoria);
-    //nombre del prodcuto
-    let name = document.createElement("h5");
-    name.classList.add("product-name");
-    name.innerText = i.Nombre.toUpperCase();
-    container.appendChild(name);
-    //precio
-    let price = document.createElement("h6");
-    price.innerText = i.price;
-    container.appendChild(price);
-    //Calificación
-    let Calificacion = document.createElement("h7");  
-    Calificacion.classList.add("product-cali");
-    Calificacion.innerText = i.Calificacion;
-    container.appendChild(Calificacion);
-  
-  
-    card.appendChild(container);
-    document.getElementById("products").appendChild(card);
-  }
-  }
-
-
 ajax_get_json();
 function DarCategoria(numero){
-    console.log(numero);
     if(numero==1){
       return "Alimento";
     }else if(numero==2){
@@ -77,8 +26,7 @@ function ajax_get_json(){
         var num=0;
         datos.forEach(function(item){
           var categoria=DarCategoria(item.Fk_Categoria);
-            products.push({fyh:'Ventas '+item.Ventas,category:categoria,Nombre: item.Nombre,price: item.Precio,Calificacion: item.Valoracion}); 
-            console.log(products);
+            products.push({fyh:'Ventas '+item.Ventas,category:categoria,Nombre: item.Nombre,price: '$'+item.Precio,Calificacion: item.Valoracion + '*️',id:item.id}); 
         });
         Cartas(products);//para mostrar los productos
         

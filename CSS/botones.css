@@ -1,0 +1,45 @@
+.button{
+    background-color: #0d69eb; /*0d69eb */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor:pointer;
+}
+
+.button:hover {
+    background-color: #77a6ea; /* Green */
+    color: rgb(255, 255, 255);
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(82, 82, 82);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn_Eliminar{
+    position: relative;
+    left: 16.5em;
+    top: 1em;
+    
+}
+
+.btn_Eliminar img{
+    height: 1.5em;
+    z-index: -1;
+}
+
+.btn_Eliminar :hover {
+    color: cadetblue;
+}

@@ -38,8 +38,8 @@ class ProductoDao{
         if($e=curl_error($this->ch)){
             echo json_encode($e);
         }else{
-            $decoded=json_decode($respuesta);
-            print_r($decoded);
+            //$decoded=json_decode($respuesta);
+            echo $respuesta;
         }
         curl_close($this->ch);
     }
@@ -93,7 +93,7 @@ class ProductoDao{
         }else{
             $decoded=json_decode($respuesta);
             //print_r($respuesta);
-            print_r($respuesta);
+            echo $respuesta;
         }
         curl_close($this->ch);
     }

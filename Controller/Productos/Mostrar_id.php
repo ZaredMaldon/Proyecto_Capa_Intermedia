@@ -1,6 +1,7 @@
 <?php 
 require_once('../ProductosDAO.php');
 $productosDao=new ProductoDao();
-$id=$_POST('id');
-$productosDao->eliminar($id);
+$id=$_POST['opc'];
+
+$productosDao->mostrar_id($id);
 ?>
