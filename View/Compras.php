@@ -216,7 +216,7 @@ session_start();
         botonEliminar.appendChild(imgEliminar);
         container.appendChild(botonEliminar);
 
-        let botonEliminar=document.createElement("a");
+        /* let botonEliminar=document.createElement("a");
         botonEliminar.setAttribute("class","btn_Eliminar");
         botonEliminar.setAttribute("identity",i.id);
         botonEliminar.setAttribute("onclick","obtenerProducto(this,2);")
@@ -224,7 +224,7 @@ session_start();
         let imgEliminar=document.createElement("img");
         imgEliminar.setAttribute("src","../img/BoteBasura.svg");
         botonEliminar.appendChild(imgEliminar);
-        container.appendChild(botonEliminar);
+        container.appendChild(botonEliminar); */
 
         card.appendChild(container);
         document.getElementById("products").appendChild(card);
