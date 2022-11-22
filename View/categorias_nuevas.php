@@ -17,12 +17,12 @@
     <link rel="stylesheet" href="../css/PaginaPrincipal.css">
     <link rel="stylesheet" href="../css/style.css"> 
 
-</head>
+</head> 
 
 <body>
   <header>
     <nav>
-        <a href="carrito.php" class="nav-link text-uppercase font-weight-bold js-scroll-trigger"><img src="../img/Carrito.png" /></a>
+        <a href="../View/carrito/carrito.php" class="nav-link text-uppercase font-weight-bold js-scroll-trigger"><img src="../img/Carrito.png" /></a>
         <a href="../index.php">Inicio</a>
         <a href="../View/Compras.html">Compra</a>
         <a href="../View/Consulta_ventas.html">Ventas</a>
@@ -72,7 +72,7 @@
             </div>
         </div>
     </form>
-
+ 
     <h5 class="text-center my-3">Listas</h5>
 
     <!-- Modal 2 modificar -->

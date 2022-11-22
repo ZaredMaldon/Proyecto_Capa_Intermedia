@@ -77,3 +77,10 @@ Create table Listas(
     Constraint Fk_Usuario3  foreign key(Fk_Usuario) references Usuarios(idUsuario),
     constraint Fk_Producto1 foreign key(Fk_Producto)references Productos(NoProducto)
 );
+
+Create table PruebaProductos(
+	id_prod         bigint auto_increment not null unique,
+	Nombre_Lista 	varchar(30) not null,
+    Precio		 	varchar(10) 	null
+);
+
