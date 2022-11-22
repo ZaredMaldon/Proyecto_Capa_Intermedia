@@ -1,5 +1,6 @@
 var btncerrar=document.getElementById("btnCerrarP");
 var formulario=document.getElementById("ModificarUsuario");
+var div=document.getElementById("datos");
 
 $('#file-input').change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
     readURL(this,'#imagenPopup');
@@ -10,6 +11,60 @@ function mostrarPopup(){
 
 function quitarPopup(){
     document.getElementById("popup-1").classList.toggle("active");
+}
+
+function mostrarPopup2(id){
+    document.getElementById("popup-2").classList.toggle("active");
+    if(div.childElementCount!=0){
+        div.innerHTML='';
+    }
+   //../Controller/Productos/Mostrar_id.php
+   $.ajax({
+    type:'POST', //aqui puede ser igual get
+    url: '../Controller/Productos/Mostrar_id.php',//aqui va tu direccion donde esta tu funcion php
+    data: {opc:id,process:true},//aqui tus datos
+    success:function(data){
+        var datos=JSON.parse(data);
+        datos.forEach(dato => {
+            console.log(dato);
+            if(dato['id']==id){
+                //div.removeChild(child);
+                div.innerHTML+=`
+                <div></div>
+                <label >Nombre:</label>
+                <input type="text" value="${dato['Nombre']}" name="nombre" placeholder="Nombre"></br>
+                <label >Precio:</label>
+                <input type="text" value="${dato['Precio']}" name="Precio" placeholder="Precio"></br>
+                <label >Categoria:</label>
+                <select id="categoria">
+                    <option value="1">Categoria 1</option>
+                    <option value="2">Otra categoria</option>
+                </select></br>
+                <label >Imagenes:</label></br>
+                <input type="file" name="Imagenes" id="idImagen" multiple></br>
+                <label >Video:</label></br>
+                <input type="file" name="Video"></br>
+                <label >Cantidad:</label>
+                <input type="text" value="${dato['Cantidad']}" name="Cantidad" placeholder="Cantidad"></br>
+                <label >Valoracion:</label>
+                <input type="text" value="${dato['Valoracion']}" name="Valoracion" placeholder="Valoracion"> </br>
+                
+                `;
+            }
+        });
+        
+        //window.location.assign("View/Login.html");//lo que devuelve tu archivo index.php
+    },
+    error:function(data){
+        //var datos=JSON.parse(data);
+        console.log(data);
+    //lo que devuelve si falla tu archivo index.php
+    }
+});
+}
+
+function quitarPopup2(){
+    document.getElementById("popup-2").classList.toggle("active");
 }
 function cambiarDatosUser(){
 

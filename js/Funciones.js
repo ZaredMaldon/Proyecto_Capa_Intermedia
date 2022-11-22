@@ -27,3 +27,12 @@ function readURL(input,idImg) {//Cambia la imagen de una etiquta img
     }
 }
 
+function valorSelectFunc(_id){
+    var select=document.getElementById(_id);
+    var selectedOption = select.options[select.selectedIndex];
+    return selectedOption.value;
+}
+
+function NewUrl(urlApi,id) {
+    return urlApi+id;
+}

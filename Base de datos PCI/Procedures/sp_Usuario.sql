@@ -22,8 +22,7 @@ END IF;
 
 IF(Opc=2) then /*ELIMINAR*/
 START TRANSACTION;
-	DELETE FROM Personas WHERE Fk_Usuario=_id;
-	DELETE FROM Usuarios WHERE idUsuario = _id;
+	UPDATE Usuarios set Estatus=0 where idUsuario=_id;/*Estatus=0 Eliminado----Estatus=1 No Eliminado*/
 	If @@error_count = 0 then
 		Commit;
 	end if ;
@@ -34,8 +33,14 @@ END IF;
 
 IF(Opc=3) then /*MODIFICAR*/
 START TRANSACTION;
-	UPDATE Usuarios set Usuario=_usuario,Contrasenia=_password,Email=_email where idUsuario=_id;
+	IF(_imagen="") then
+	UPDATE Usuarios set Usuario=_usuario,Contrasenia=_password,Email=_email,Tipo=_tipo,Fk_Rol=_rol where idUsuario=_id;
     UPDATE Personas set Nombres=_nombres,APat=_appat,AMat=_apmat where FK_Usuario=_id;
+    END IF;
+    IF (_imagen!="") then
+    UPDATE Usuarios set Usuario=_usuario,Contrasenia=_password,Email=_email,Tipo=_tipo,Fk_Rol=_rol where idUsuario=_id;
+    UPDATE Personas set Nombres=_nombres,APat=_appat,AMat=_apmat,Imagen=_imagen where FK_Usuario=_id;
+    END IF;
 	If @@error_count = 0 then
 		Commit;
 	end if ;

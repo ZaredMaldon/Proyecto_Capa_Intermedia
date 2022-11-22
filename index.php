@@ -23,7 +23,7 @@
         <nav>
             
             <a href="index.php">Inicio</a>
-            <a href="View/Compras.html">Compra</a>
+            <a href="View/Compras.php">Compra</a>
             <a href="View/Consulta_ventas.html">Ventas</a>
             <a href="View/Carrito.html">Carrito</a>
             <a href="View/Consulta_pedidos.html">pedidos</a>
