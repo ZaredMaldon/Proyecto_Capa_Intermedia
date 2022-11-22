@@ -81,6 +81,14 @@ Create table Listas(
 Create table PruebaProductos(
 	id_prod         bigint auto_increment not null unique,
 	Nombre_Lista 	varchar(30) not null,
-    Precio		 	varchar(10) 	null
+    Precio		 	varchar(10) 	null,
+    Constraint Pk_Prueba primary key(id_prod)
+);
+
+create table Carrito(
+	 idCarrito  bigint auto_increment not null unique,
+     FK_Prueba bigint not null,
+     Constraint Pk_Carrito primary key(idCarrito),
+     Constraint Fk_Prueba  foreign key(Fk_Prueba) references PruebaProductos(id_prod)
 );
 
