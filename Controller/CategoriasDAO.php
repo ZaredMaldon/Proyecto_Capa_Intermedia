@@ -16,7 +16,7 @@ class CategoriaDao{
         try{
            
             $msql=$this->conexion;
-            $execute=$msql->query("CALL sp_Categorias(1, null,'{$Categoria}','{$Descripcion}',{$USUARIO});");
+            $execute=$msql->query("CALL sp_categorias(1, null,'{$Categoria}','{$Descripcion}',{$USUARIO});");
             if($execute){
                 echo json_encode("1");
             }else{
@@ -39,7 +39,7 @@ class CategoriaDao{
         try{
            
             $msql=$this->conexion;
-            $execute=$msql->query("CALL sp_Categorias(3, {$ID},'{$Categoria}','{$Descripcion}',null);");
+            $execute=$msql->query("CALL sp_categorias(3, {$ID},'{$Categoria}','{$Descripcion}',null);");
             if($execute){
                 echo json_encode("1");
                 

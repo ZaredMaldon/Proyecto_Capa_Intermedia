@@ -7,5 +7,7 @@ $_Categoria = $_POST['Categoria'];
 $_Descripcion = $_POST['Descripcion'];
 
 session_start();
-$categoriaDao->agregar($_Categoria,$_Descripcion,$_SESSION['userNow'][0]);
+//$categoriaDao->agregar($_Categoria,$_Descripcion,$_SESSION['userNow'][0]);
+
+echo json_encode($_SESSION['userNow'][0]);
 ?> 

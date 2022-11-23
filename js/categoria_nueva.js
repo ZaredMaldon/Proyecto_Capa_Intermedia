@@ -23,7 +23,7 @@ form.addEventListener("submit",function(e){
   })
   .then(res=>res.json())
   .then(data=>{
-    
+     
     console.log(data);
       if(data=="1"){
           console.log(data);
