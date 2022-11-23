@@ -124,9 +124,10 @@ session_start();
 
         </div>
         <input type="submit" value="Modificar" class="button" id="Modibtn">
-        <?php if ($_SESSION['userNow'][4] == 2) { //si es cliente puede agregar al carrito
+        <?php 
+        if ($_SESSION['userNow'][4] == 2) { //si es cliente puede agregar al carrito
         ?>
-          <button type="button" class="button" id="Carritobtn">Carrito</button>
+          <button type="button" class="button" id="Carritobtn" onclick="AgregarCarrito()">Carrito</button>
         <?php }
         ?>
       </form>
@@ -234,6 +235,12 @@ session_start();
     function obtenerProducto(element,opc) {
       if(opc==1){//ventana modificar
         var Id = element.getAttribute("id");
+        if(localStorage.getItem('id')){
+          localStorage.removeItem('id');
+        }
+        
+        localStorage.setItem("id",Id);
+        //window.location.assign("../View/Compras.php?id="+Id);
         mostrarPopup2(Id);
       }else if(opc==2){//eliminar
         var Id=element.getAttribute("identity");
@@ -264,6 +271,25 @@ session_start();
           }
       });
 
+    }
+
+    function AgregarCarrito(){
+      $.ajax({
+          type:'POST', //aqui puede ser igual get
+          url: '../View/carrito/AgregarCarrito.php',//aqui va tu direccion donde esta tu funcion php
+          data: {opc:localStorage.getItem('id'),process:true},//aqui tus datos
+          success:function(data){
+              var datos=JSON.parse(data);
+              console.log(datos);
+              
+              //window.location.assign("View/Login.html");//lo que devuelve tu archivo index.php
+          },
+          error:function(data){
+              //var datos=JSON.parse(data);
+              console.log("Error ajax");
+          //lo que devuelve si falla tu archivo index.php
+          }
+      });
     }
 
   </script>
