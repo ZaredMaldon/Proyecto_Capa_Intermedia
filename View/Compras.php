@@ -103,7 +103,7 @@ session_start();
           <select id="categoria" name="categoria">
             <option value="1">Categoria 1</option>
             <option value="2">Otra categoria</option>
-          </select>
+          </select> 
           <input type="file" name="Imagenes" id="idImagen" multiple>
           <input type="file" name="Video">
           <input type="text" name="Cantidad" placeholder="Cantidad">

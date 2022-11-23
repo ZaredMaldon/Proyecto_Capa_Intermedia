@@ -48,9 +48,7 @@
          $nombre = $_GET['nombre'];
          $precio = $_GET['precio'];
       ?>
-
-
-
+ 
 
     <section id="blog-home" class="pt-5 mt-5 container">
         <h2 class="font-weight-bold pt-5">Carrito de Compras</h2>

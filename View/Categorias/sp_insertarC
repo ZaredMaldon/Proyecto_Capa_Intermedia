@@ -1,0 +1,21 @@
+<?php
+require_once("../../Model/Conexion.php");
+
+$conexionNew = new Conectar();
+$conectar = $conexionNew -> conectar();
+
+
+ $_Categoria = $_POST['Categoria'];
+ $_Descripcion = $_POST['Descripcion'];
+       
+     $sql = "INSERT INTO categorias(Categoria, Descripcion) VALUES('$_Categoria', '$_Descripcion')";
+     $rta = mysqli_query($conectar, $sql);
+
+     if(!$rta){
+        echo "No se inserto!";
+     }else{
+        //header("Location: carrito.php");
+        echo " se inserto!";
+     }
+     
+?>

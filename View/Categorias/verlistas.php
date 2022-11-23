@@ -1,6 +1,6 @@
 <?php
-require_once("../CategoriasDAO.php");
-
+require_once("../../Controller/CategoriasDAO.php");
+ 
 $categoriaDao=new CategoriaDao();
 
 $_Categoria = $_POST['Categoria'];

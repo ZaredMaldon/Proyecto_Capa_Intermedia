@@ -1,11 +1,5 @@
 <?php
-/*  
-<?php
-    include(Conexion.php); 
-    $con=conectar();
-    echo "Se realizo exitosamente la conexion a la base de datos"
-?>
-*/
+
     class Conectar{
         public function conectar(){
             try{

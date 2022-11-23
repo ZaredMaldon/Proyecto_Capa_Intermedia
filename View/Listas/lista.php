@@ -63,9 +63,9 @@
                     <td>Add Carrito</td>
                 </tr>
             </thead>
-
+ 
             <tbody>
-             
+              
                 <?php 
                 $cnx = mysqli_connect("localhost", "root", "123456", "Progra_Web_CapaIntermedia");
                 
@@ -81,6 +81,7 @@
                         <td><img src="../../img/img1.jpg" alt=""></td>                         
                         <td><?php echo $mostrar['1'] ?></td>
                         <td><?php echo $mostrar['2'] ?></td>
+                        <!-- obtener datos -->
                         <td><a href="../carrito/carrito.php?
                         id_prod=<?php echo $mostrar['0']?> &
                         nombre=<?php echo $mostrar['1']?> &

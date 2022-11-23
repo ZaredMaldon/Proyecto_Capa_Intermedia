@@ -7,7 +7,7 @@
     <title>insertar nuevo</title>
 </head>
 <body>
-
+ 
 <!-- solo es una de prueba donde agarra datos  -->
     <form action="sp_insertar.php" method="post">
         <h1>PRODUCTO</h1>
