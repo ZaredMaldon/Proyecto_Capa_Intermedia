@@ -21,7 +21,7 @@
 
 <body>
   <header>
-    <nav>
+    <nav> 
         <a href="../View/carrito/carrito.php" class="nav-link text-uppercase font-weight-bold js-scroll-trigger"><img src="../img/Carrito.png" /></a>
         <a href="../index.php">Inicio</a>
         <a href="../View/Compras.html">Compra</a>
@@ -72,7 +72,7 @@
             </div>
             </div>
         </div>
-    </form>
+    </form> 
  
     <h5 class="text-center my-3">Listas</h5>
 <p> Usuario: <?php 

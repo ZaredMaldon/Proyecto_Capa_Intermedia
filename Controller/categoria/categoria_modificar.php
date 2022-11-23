@@ -3,7 +3,7 @@ require_once("../CategoriasDAO.php");
 
 $categoriaDao=new CategoriaDao();
 
-$_ID = $_POST['id']
+/* $_ID = $_POST['id'] */
 $_Categoria = $_POST['Categoria'];
 $_Descripcion = $_POST['Descripcion']; 
 

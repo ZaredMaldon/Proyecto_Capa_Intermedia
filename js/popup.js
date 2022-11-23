@@ -66,6 +66,7 @@ function mostrarPopup2(id){
 function quitarPopup2(){
     document.getElementById("popup-2").classList.toggle("active");
 }
+
 function cambiarDatosUser(){
 
         var opc=3;

@@ -40,6 +40,8 @@
     <h4 class="mb-3">EDITAR CATEGORIA</h4>
 
         <form id="form" > </form>
+
+        <form action="cate.php">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -48,7 +50,7 @@
                 <div class="modal-body">
  
                 <?php 
-
+ 
                       $id = $_GET['id'];
                       $conexion=new Conectar();
                       $con=$conexion->conectar(); 
@@ -62,7 +64,7 @@
                     <div id="msg"></div>
                     <br>
                     <p>Descripción</p>
-                    <input type="text" name="Descripcion" id="textInput" class="form-control" value="<?php echo $fila['Descripcion'] ?>" cols="30" rows="5">
+                    <input type="text" name="Descripcion" id="textarea" class="form-control" value="<?php echo $fila['Descripcion'] ?>" cols="30" rows="5">
                     
                 <?php }
                       ?> 
@@ -70,12 +72,16 @@
                     
                 </div> 
                     <div class="modal-footer">
-                        <a href="categorias_nuevas.php"><button type="button" class="btn btn-outline-danger btn-block" style='width: 100px; height: 40px'> Cancelar </button></a>
-                        <button type="submit" id="modificar" class="btn btn-outline-success">Modificar</button>
+                        <a href="categorias_nuevas.php"><button type="button"  class="btn btn-outline-danger btn-block" style='width: 100px; height: 40px'> Cancelar </button></a>
+                        <a href="../View/cate.php?
+                        Categoria=<?php echo $fila['Categoria']?> &
+                        Descripcion=<?php echo $fila['Descripcion']?>
+                        "><button type="submit" id="modificar" class="btn btn-outline-success btn-block">Modificar</button>
                     </div>
                 </div>
             </div>    
-  </div>
+        </form>
+        </div>
 
    </div>
     
@@ -105,7 +111,7 @@
 </footer>
 
 <script src="../Script/jquery.js"></script>
-<script src="../js/catego_modificar.js"></script>
+<!-- <script src="../js/catego_modificar.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
 </script>

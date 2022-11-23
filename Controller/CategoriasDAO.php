@@ -1,5 +1,6 @@
 <?php
-require_once("../../Model/Conexion.php");
+require_once("../Model/Conexion.php");
+/* require_once("../../Model/Conexion.php"); */
  
 class CategoriaDao{
     private $conexion;
@@ -44,8 +45,8 @@ class CategoriaDao{
             $msql=$this->conexion;
             $execute=$msql->query("CALL sp_Categorias(3, {$ID},'{$Categoria}','{$Descripcion}',null);");
             if($execute){
-                echo json_encode("1");
-                
+               /*  echo json_encode("1"); */
+                echo "<script> alert('Se han actualizado los datos correctamente');window.location='../View/categorias_nuevas.php';</script>";
             }else{
                 echo json_encode("0");
             }
