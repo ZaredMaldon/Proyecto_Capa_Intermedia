@@ -20,6 +20,25 @@
             document.getElementById('n1').value = "";
         }
     </script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <style>
+        
+        /* Media query for mobile viewport */
+        @media screen and (max-width: 400px) {
+            #paypal-button-container {
+                width: 100%;
+            }
+        }
+        
+        /* Media query for desktop viewport */
+        @media screen and (min-width: 400px) {
+            #paypal-button-container {
+                width: 250px;
+                display: inline-block;
+            }
+        }
+        
+    </style>
 </head>
 
 <body>
@@ -62,6 +81,7 @@
                     <tbody>
                         <?php
                         $total = 0;
+                        if(isset($_SESSION['carrito'])){
                         foreach ($_SESSION['carrito'] as &$carrito) { ?>
                             <tr>
                                 <td><?php echo $carrito[0]; ?></td>
@@ -85,7 +105,7 @@
                             </tr>
                         <?php $total = $total + $carrito[2];
                         }
-
+                    }
                         $_SESSION['total'] = $total;
                         ?>
                     </tbody>
@@ -111,7 +131,7 @@
                             </div>
                             <hr class="second-hr">
                             <a href="../Pago.php"><button type="button" id="pagar" class="btn btn-primary">Pago c/tarjeta</button></a>
-                            <a href=""><button type="button" id="pagar2" class="btn btn-primary">Pago c/Paypal</button></a>
+                            <div id="paypal-button-container"></div>
                         </div>
                     </div>
                 </div>
@@ -120,6 +140,53 @@
 
         </form>
     </div>
+    <script>
+    paypal.Button.render({
+        env: 'sandbox', // sandbox | production
+        style: {
+            label: 'checkout',  // checkout | credit | pay | buynow | generic
+            size:  'responsive', // small | medium | large | responsive
+            shape: 'pill',   // pill | rect
+            color: 'blue'   // gold | blue | silver | black
+        },
+ 
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+ 
+        client: {
+            sandbox:    'AUkWObjta8obMWHkeu6jbZVLBGXqNUxWReE9pIZeXTlyugGNPLWoEU0S3AmcLcZK82AktEKyiN38QyvV',
+            production: ''
+        },
+ 
+        // Wait for the PayPal button to be clicked
+ 
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total:<?php echo $_SESSION['total']?>, currency: 'MXN' }, 
+                            description:"Compra de productos a Develoteca:$0.01",
+                            custom:"Codigo"
+                        }
+                    ]
+                }
+            });
+        },
+ 
+        // Wait for the payment to be authorized by the customer
+ 
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function() {
+                alert("Pagado: $"+ <?php echo $_SESSION['total'] ?>+" \nGracias por su compra!");
+                <?php unset($_SESSION['carrito']); $_SESSION['total']=0; ?>
+                window.location="../../index.php";
+            });
+        }
+    
+    }, '#paypal-button-container');
+ 
+</script>
     <script src="../../Script/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">

@@ -2,8 +2,6 @@
 $(document).ready(function(){
 
     $("#Pago").click(function(){
-        
-            
             Swal.fire({
                 icon:'success',
                 title:'Enhorabuena',
@@ -14,11 +12,15 @@ $(document).ready(function(){
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                  location.href="EliminarCarrito.php";
+                  fetch('../View/carrito/Confirmarpago.php',{
+                    method:'GET'
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    location.href="../index.php";
+                })
+                  
                 } 
               });
-
-    
-       
     });
 });
