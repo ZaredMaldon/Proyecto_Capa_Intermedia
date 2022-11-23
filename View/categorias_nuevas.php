@@ -41,7 +41,7 @@
 
     <h4 class="mb-3">CATEGORIAS</h4>
 
-
+ 
         <div id="addNew" data-bs-toggle="modal" data-bs-target="#form">
         <span>Agregue una categoria</span>
         <i class="fas fa-plus"></i>
