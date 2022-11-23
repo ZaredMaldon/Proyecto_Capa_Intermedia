@@ -97,5 +97,21 @@ class ProductoDao{
         }
         curl_close($this->ch);
     }
+
+    public function mostrar_id_php($_id){
+        $newUrl=$this->url.$_id;
+        curl_setopt($this->ch,CURLOPT_URL,$newUrl);
+        curl_setopt($this->ch,CURLOPT_RETURNTRANSFER,true);
+
+        $respuesta=curl_exec($this->ch);
+
+        if($e=curl_error($this->ch)){
+            echo json_encode($e);
+        }else{
+            $decoded=json_decode($respuesta,true);
+            return($decoded);
+        }
+        curl_close($this->ch);
+    }
 }
 ?>

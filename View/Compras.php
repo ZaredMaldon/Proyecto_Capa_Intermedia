@@ -30,6 +30,7 @@ session_start();
     <h2> Online Shop</h2>
     <nav>
       <a href="../index.php">Inicio</a>
+      <a href="../View/carrito/carrito.php">Carrito</a>
       <?php
       if ($_SESSION['userNow'][4] == 1) { //vendedor
       ?>
@@ -124,9 +125,10 @@ session_start();
 
         </div>
         <input type="submit" value="Modificar" class="button" id="Modibtn">
-        <?php if ($_SESSION['userNow'][4] == 2) { //si es cliente puede agregar al carrito
+        <?php 
+        if ($_SESSION['userNow'][4] == 2) { //si es cliente puede agregar al carrito
         ?>
-          <button type="button" class="button" id="Carritobtn">Carrito</button>
+          <button type="button" class="button" id="Carritobtn" onclick="AgregarCarrito()">Carrito</button>
         <?php }
         ?>
       </form>
@@ -156,6 +158,8 @@ session_start();
   </footer>
   <!-- Script -->
   <script src="../Script/jquery.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/SweetAlert.js"></script>
   <script src="../js/Funciones.js"></script>
   <script src="../js/Productos.js"></script>
   <script src="../js/pedidos.js"></script>
@@ -216,16 +220,16 @@ session_start();
         botonEliminar.appendChild(imgEliminar);
         container.appendChild(botonEliminar);
 
-       /*  let botonEliminar=document.createElement("a");
+        /* let botonEliminar=document.createElement("a");
         botonEliminar.setAttribute("class","btn_Eliminar");
         botonEliminar.setAttribute("identity",i.id);
-        botonEliminar.setAttribute("onclick","obtenerProducto(this,2);") */
+        botonEliminar.setAttribute("onclick","obtenerProducto(this,2);")
         //botonEliminar.classList.add('button');
-        /* let imgEliminar=document.createElement("img");
+        let imgEliminar=document.createElement("img");
         imgEliminar.setAttribute("src","../img/BoteBasura.svg");
         botonEliminar.appendChild(imgEliminar);
-        container.appendChild(botonEliminar);
- */
+        container.appendChild(botonEliminar); */
+
         card.appendChild(container);
         document.getElementById("products").appendChild(card);
       }
@@ -234,6 +238,12 @@ session_start();
     function obtenerProducto(element,opc) {
       if(opc==1){//ventana modificar
         var Id = element.getAttribute("id");
+        if(localStorage.getItem('id')){
+          localStorage.removeItem('id');
+        }
+        
+        localStorage.setItem("id",Id);
+        //window.location.assign("../View/Compras.php?id="+Id);
         mostrarPopup2(Id);
       }else if(opc==2){//eliminar
         var Id=element.getAttribute("identity");
@@ -264,6 +274,25 @@ session_start();
           }
       });
 
+    }
+
+    function AgregarCarrito(){
+      $.ajax({
+          type:'POST', //aqui puede ser igual get
+          url: '../View/carrito/AgregarCarrito.php',//aqui va tu direccion donde esta tu funcion php
+          data: {opc:localStorage.getItem('id'),process:true},//aqui tus datos
+          success:function(data){
+              var datos=JSON.parse(data);
+              alertaSweetSucces("En Carrito","Producto en carrito","",false);
+              
+              //window.location.assign("View/Login.html");//lo que devuelve tu archivo index.php
+          },
+          error:function(data){
+              //var datos=JSON.parse(data);
+              console.log("Error ajax");
+          //lo que devuelve si falla tu archivo index.php
+          }
+      });
     }
 
   </script>
