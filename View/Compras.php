@@ -30,6 +30,7 @@ session_start();
     <h2> Online Shop</h2>
     <nav>
       <a href="../index.php">Inicio</a>
+      <a href="../View/carrito/carrito.php">Carrito</a>
       <?php
       if ($_SESSION['userNow'][4] == 1) { //vendedor
       ?>
@@ -157,6 +158,8 @@ session_start();
   </footer>
   <!-- Script -->
   <script src="../Script/jquery.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/SweetAlert.js"></script>
   <script src="../js/Funciones.js"></script>
   <script src="../js/Productos.js"></script>
   <script src="../js/pedidos.js"></script>
@@ -280,7 +283,7 @@ session_start();
           data: {opc:localStorage.getItem('id'),process:true},//aqui tus datos
           success:function(data){
               var datos=JSON.parse(data);
-              console.log(datos);
+              alertaSweetSucces("En Carrito","Producto en carrito","",false);
               
               //window.location.assign("View/Login.html");//lo que devuelve tu archivo index.php
           },

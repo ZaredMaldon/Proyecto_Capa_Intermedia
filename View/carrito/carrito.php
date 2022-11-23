@@ -47,9 +47,9 @@
         <nav>
 
             <a href="../../index.php">Inicio</a>
-            <a href="../Compras.html">Compra</a>
-            <a href="../Consulta_ventas.html">Ventas</a>
-            <a href="../Consulta_pedidos.html">Pedidos</a>
+            <a href="../Compras.php">Compra</a>
+            <a href="../Consulta_ventas.php">Ventas</a>
+            <a href="../Consulta_pedidos.php">Pedidos</a>
             <!-- agregar el inicio de sesion despues -->
             <a id="Salir-btn" name="SalirBtn" class="link" onclick="salir();">Cerrar Sesion</a>
         </nav>
@@ -140,6 +140,8 @@
 
         </form>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../js/SweetAlert.js"></script>
     <script>
     paypal.Button.render({
         env: 'sandbox', // sandbox | production
@@ -178,9 +180,11 @@
  
         onAuthorize: function(data, actions) {
             return actions.payment.execute().then(function() {
-                alert("Pagado: $"+ <?php echo $_SESSION['total'] ?>+" \nGracias por su compra!");
-                <?php unset($_SESSION['carrito']); $_SESSION['total']=0; ?>
-                window.location="../../index.php";
+                <?php
+                    $precio=$_SESSION['total'];
+                    unset($_SESSION['carrito']); $_SESSION['total']=0; ?>
+                alertaSweetSucces("Enhorabuena","Pagado: $"+ <?php echo $precio ?>+" \nGracias por su compra!","../../index.php",true);
+                
             });
         }
     
@@ -203,7 +207,7 @@
                     process: true
                 }, //aqui tus datos
                 success: function(data) {
-                    alert(data);
+                    alertaSweetSucces("Enhorabuena","se elimino correctamente el articulo de su carrito","",false);
                     location.reload();
                 },
             });
