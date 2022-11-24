@@ -23,4 +23,5 @@ $array=array(
     'Existencia'=>1
 );
 $productosDao->agregar($array);
+
 ?>

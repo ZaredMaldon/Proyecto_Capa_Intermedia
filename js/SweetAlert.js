@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 });
 
-function alertaSweetSucces(titulo,mensaje,url,direccionamiento){
+function alertaSweetSucces(titulo,mensaje,url,direccionamiento){//"Enhorabuena","hola","../index",true
   Swal.fire({
     icon:'success',
     title:titulo,

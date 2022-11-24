@@ -66,6 +66,7 @@ Create table Productos(
 );
 
 Create table Listas(
+	id				int auto_increment not null,
 	Nombre_Lista 	varchar(30) not null,
     Descripcion	 	mediumtext	not null,
     Imagen			blob		null,
@@ -73,9 +74,8 @@ Create table Listas(
     Fecha_Creacion	date		not null,
     Fk_Usuario		bigint		not null,
     Fk_Producto		bigint		not null,
-    Constraint Pk_Listas	primary key(Nombre_Lista,Fk_Usuario,Fk_Producto,Fecha_Creacion),
-    Constraint Fk_Usuario3  foreign key(Fk_Usuario) references Usuarios(idUsuario),
-    constraint Fk_Producto1 foreign key(Fk_Producto)references Productos(NoProducto)
+    Constraint Pk_Listas	primary key(id),
+    Constraint Fk_Usuario3  foreign key(Fk_Usuario) references Usuarios(idUsuario)
 );
 
 Create table PruebaProductos(

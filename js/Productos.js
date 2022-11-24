@@ -6,7 +6,18 @@ formRegistro.addEventListener("submit",function (e) {
     var datos=new FormData(formRegistro);
     //var cat=valorSelectFunc('categoria');
 
-    $.ajax({
+    fetch('../Controller/Productos/AgregarP.php',{
+        method:'POST',
+        data:datos
+    })
+    //.then(response=>response.json())
+    .then(data=>{
+        console.log(data);
+        //return JSON.parse(data);
+    })
+    .catch(error=>console.log(error))
+
+    /* $.ajax({
         method: "POST",
         url: "../Controller/Productos/AgregarP.php",
         data:datos,
@@ -15,10 +26,10 @@ formRegistro.addEventListener("submit",function (e) {
     })
         .done(function( res ) {
             console.log(res);
-            if(res==="1"){
+            if(res=="1"){
                 console.log("Registrado con exito!");
             }
-        });
+        }); */
         
 });
 
@@ -29,7 +40,7 @@ formUpdate.addEventListener("submit",function(e){
 
     $.ajax({
         method: "POST",
-        url: "../Controller/Productos/AgregarP.php",
+        url: "../Controller/Productos/ModificarP.php?id="+localStorage.getItem('id'),
         data:datos,
         processData: false,
         contentType: false
@@ -37,7 +48,7 @@ formUpdate.addEventListener("submit",function(e){
         .done(function( res ) {
             console.log(res);
             if(res==="1"){
-                console.log("Registrado con exito!");
+                console.log("Modificado con exito!");
             }
         });
 });

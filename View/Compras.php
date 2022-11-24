@@ -95,7 +95,7 @@ session_start();
     <div class="overlay"></div>
     <div class="content">
       <div class="close-btn" id="btnCerrarP" onclick="quitarPopup()">&times;</div>
-      <h1>Modifica tus datos</h1>
+      <h1>Agrega tu producto</h1>
       <div class="Register">
         <h2>Registrar</h2>
         <form id="Productos_Registro" method="POST">
@@ -109,7 +109,7 @@ session_start();
           <input type="file" name="Video">
           <input type="text" name="Cantidad" placeholder="Cantidad">
           <input type="text" name="Valoracion" placeholder="Valoracion">
-          <input type="submit" id="buttonProductos" onclick="">
+          <input type="submit" id="buttonProductos" class="button" onclick="">
         </form>
       </div>
 
@@ -184,7 +184,7 @@ session_start();
         let container = document.createElement("div");
         container.classList.add("container");
         container.setAttribute("id", i.id);
-        container.setAttribute("onclick", "obtenerProducto(this,1);")
+        container.setAttribute("onclick", "obtenerProducto(this,1);");
         //fecha
         let fecha = document.createElement("h3");
         fecha.classList.add("product-fecha");

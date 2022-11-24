@@ -6,7 +6,7 @@ class ProductoDao{
 
     function __construct()
     {   
-        $this->url='https://apiproductos.zambiaa.com/api/productos/';
+        $this->url='https://apiproductos.zambiaa.com/api/productos';
         $this->ch=curl_init();
     }
 
@@ -22,7 +22,7 @@ class ProductoDao{
         if($e=curl_error($this->ch)){
             echo json_encode($e);
         }else{
-            echo json_encode("1");
+            echo json_encode($data);
         }
         curl_close($this->ch);
     }

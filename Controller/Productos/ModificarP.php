@@ -8,6 +8,7 @@ $Precio=$_POST['Precio'];
 $Categoria=$_REQUEST['categoria'];
 $Cantidad=$_POST['Cantidad'];
 $Valoracion=$_POST['Valoracion'];
+$id=$_GET['id'];
 
 $array=array(
     'Nombre'=>$Nombre,

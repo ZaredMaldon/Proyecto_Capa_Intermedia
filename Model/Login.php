@@ -21,7 +21,6 @@ if($filas){
     while($fila=mysqli_fetch_array($resultado)){
         $_SESSION['userNow']= array($fila['idUsuario'],$fila['Usuario'],$fila['Contrasenia'],$fila['Tipo'],$fila['Fk_Rol'],$fila['Rol'],$fila['Email'],$fila['Imagen'],$fila['Nombres'],$fila['APat'],$fila['AMat'],$fila['Fecha_Nacimiento'],$fila['idSexo'],$fila['Sexo'],$fila['Fecha_ingreso'],$fila['Estatus']);
     }
-    
     header("location:../index.php");
 }else{
     ?>
