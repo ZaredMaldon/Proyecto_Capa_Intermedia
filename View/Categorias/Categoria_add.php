@@ -51,22 +51,40 @@
                     <th>ID</th>
                     <th>Categoría</th>
                     <th>Descripción</th>
+                    <th>Usuario</th>
                     <th>Acción</th>
                  </tr>
               </thead>
                 <tbody>
                     <?php 
+                       /*  $id = $_GET['id']; */
+                        $conexion=new Conectar();
+                        $con=$conexion->conectar(); 
+                            //checamos la conexión
+                            if($con->connect_error){
+                                die("Conection failed: ". $con->connect_error);
+                            }
 
-                    ?>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>                       
-                        <td>
-                            <a class="btn btn-primary btn-sm" href="edit.php">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="delete.php">Eliminar</a>
-                        </td>
-                    </tr>
+                        $consulta = "SELECT c.idCategoria, c.Categoria, c.Descripcion, u.Usuario  FROM categorias c
+                        INNER JOIN usuarios u on c.Fk_Usuario = u.idUsuario 
+                        WHERE (c.Estatus = 1);";
+                        $resultado=mysqli_query($con,$consulta);
+                        while($fila = $resultado->fetch_assoc()){ 
+                                echo "
+                                    <tr>
+                                    <td>$fila[idCategoria]</td>
+                                    <td>$fila[Categoria]</td>
+                                    <td>$fila[Descripcion]</td>
+                                    <th>$fila[Usuario]</th>                       
+                                    <td>
+                                        <a class='btn btn-primary btn-sm' href='edit.php?id=$fila[idCategoria]'>Editar</a>
+                                        <a class='btn btn-danger btn-sm' href='delete.php?=$fila[idCategoria]'>Eliminar</a>
+                                    </td>
+                                    </tr>
+                                "; 
+                    }
+                    ?> 
+
                 </tbody>
 
 
@@ -103,8 +121,6 @@
   <h2 class="titulo-final">Copyright ©MAZED Company 2022. All Right Reserved By Zared Maldonado | Fernanda Mondragon</h2>
 </footer>
 
-<script src="../Script/jquery.js"></script>
-<script src="../js/categoria_nueva.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
 </script>
