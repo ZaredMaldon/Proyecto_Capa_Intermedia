@@ -34,14 +34,14 @@ session_start();
       <?php
       if ($_SESSION['userNow'][4] == 1) { //vendedor
       ?>
-        <a href="Consulta_ventas.html">Ventas</a>
+        <a href="Consulta_ventas.php">Ventas</a>
       <?php }
       if ($_SESSION['userNow'][4] == 2) { //cliente 
       ?>
-        <a href="Consulta_pedidos.html">Compras</a>
+        <a href="Consulta_pedidos.php">Compras</a>
       <?php } ?>
       <a href="Perfil Usuario.php"><?php echo $_SESSION['userNow'][1] ?></a>
-      <a href="Login.html" id="Login-btn" class="link">Login</a>
+      <a href="Login.html" id="Login-btn" class="link">Cerrar sesion</a>
     </nav>
   </section>
 

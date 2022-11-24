@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
-
+ 
 
     <header>
         
@@ -25,7 +25,7 @@
             <a href="index.php">Inicio</a>
             <a href="View/Compras.php">Compra</a>
             <a href="View/Consulta_ventas.php">Ventas</a>
-            <a href="View/Carrito.php">Carrito</a>
+            <a href="View/carrito/Carrito.php">Carrito</a>
             <a href="View/Consulta_pedidos.php">pedidos</a>
             <?php
             session_start();

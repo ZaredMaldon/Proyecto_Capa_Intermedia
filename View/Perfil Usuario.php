@@ -17,10 +17,11 @@
 <body>
     <header>
         <nav>
-            <a href="../index.php">Inicio</a>
-            <a href="../View/Compras.html">Compra</a>
-            <a href="../View/Consulta_ventas.html">Ventas</a>
-            <a href="../View/Consulta_pedidos.html">Pedidos</a>
+        <a href="../index.php">Inicio</a>
+        <a href="Compras.php">Compra</a>
+        <a href="Consulta_ventas.php">Ventas</a>
+        <a href="Consulta_pedidos.php">Pedidos</a>
+        <a href="../View/carrito/carrito.php">Carrito </a> 
             <?php session_start(); ?> 
             <a href="#"><?php echo $_SESSION['userNow'][1]; ?></a>
             <a id="Salir-btn" name="SalirBtn" class="link" onclick="salir();">Cerrar Sesion</a>

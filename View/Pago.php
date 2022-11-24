@@ -61,9 +61,9 @@
                                     <!-- Collect the nav links, forms, and other content for toggling -->
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-right navBar">
-                                            <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold js-scroll-trigger">Login</a></li>
-                                            <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold js-scroll-trigger">Register</a></li>
-                                            <li class="nav-item"><a href="../View/Carrito.html" class="nav-link text-uppercase font-weight-bold js-scroll-trigger"><img src="../img/Carrito.png" /></a></li>
+                                            <li class="nav-item"><a href="../index.php" class="nav-link text-uppercase font-weight-bold js-scroll-trigger">Inicio</a></li>
+                                            <li class="nav-item"><a href="View/carrito/carrito.php" class="nav-link text-uppercase font-weight-bold js-scroll-trigger">Regresar</a></li>
+                                            <li class="nav-item"><a href="View/Carrito.html" class="nav-link text-uppercase font-weight-bold js-scroll-trigger"><img src="../img/Carrito.png" /></a></li>
 
 
 

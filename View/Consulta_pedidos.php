@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,11 +24,11 @@
     
     <nav>
       <a href="../index.php">Inicio</a>
-        <a href="Compras.html">Compra</a>
-        <a href="Consulta_ventas.html">Ventas</a>
-        <a href="Consulta_pedidos.html">Pedidos</a>
-        <a href="Perfil Usuario.html">Ramonsito64</a>
-        <a href="Login.html" id="Login-btn" class="link">Login</a>
+        <a href="Compras.php">Compra</a>
+        <a href="Consulta_ventas.php">Ventas</a>
+        <a href="Consulta_pedidos.php">Pedidos</a>
+        <a href="../View/Perfil Usuario.php"><?php echo $_SESSION['userNow'][1]?></a>
+        <a href="../View/carrito/carrito.php">Carrito </a> 
     </nav>
 
         <img  class="Logo" src="../img/NOMBRE.png" width="180" height="75" alt="Imagen">
