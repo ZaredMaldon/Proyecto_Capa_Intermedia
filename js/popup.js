@@ -30,6 +30,7 @@ function mostrarPopup2(id){
                 //div.removeChild(child);
                 div.innerHTML+=`
                 <div></div>
+                <h4>id:${dato['id']}</h4>
                 <label >Nombre:</label>
                 <input type="text" value="${dato['Nombre']}" name="nombre" placeholder="Nombre"></br>
                 <label >Precio:</label>
