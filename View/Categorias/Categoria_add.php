@@ -38,7 +38,7 @@
 
   <div class="container datos"> 
 
-    <h4 class="mb-3">CATEGORIAS</h4>
+  <h4 class="mb-3"><b>CATEGORIAS</b></h4>
 
        <div class="container my-5">
 
@@ -75,7 +75,7 @@
                                     <td>$fila[idCategoria]</td>
                                     <td>$fila[Categoria]</td>
                                     <td>$fila[Descripcion]</td>
-                                    <th>$fila[Usuario]</th>                       
+                                    <td>$fila[Usuario]</td>                       
                                     <td>
                                         <a class='btn btn-primary btn-sm' href='edit.php?id=$fila[idCategoria]'>Editar</a>
                                         <a class='btn btn-danger btn-sm' href='delete.php?=$fila[idCategoria]'>Eliminar</a>
@@ -86,16 +86,9 @@
                     ?> 
 
                 </tbody>
-
-
-
-
-
             </table>
        </div>
-
    </div>
-    
 </main>
 
 <footer>

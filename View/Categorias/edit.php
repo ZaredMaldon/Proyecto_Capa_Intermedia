@@ -1,31 +1,56 @@
-<?php session_start();?>
-<?php 
-require_once("../../Model/Conexion.php");
+<?php require_once("../../Model/Conexion.php");
+
     //conexión
     $conexion=new Conectar();
     $con=$conexion->conectar(); 
 
 //Variables
- $categoria    ="";
- $descripcion  ="";
- $Usuario      ="";
- $errorMessage ="";
- $successMessage="";
- //SI los datos de han transmitido por el método post 
- //tons inicializamos las variables con los datos del form
+$idCategoria  ="";
+$categoria    ="";
+$descripcion  ="";
+$Usuario      ="";
 
- if( $_SERVER['REQUEST_METHOD'] == 'POST'){
+$errorMessage ="";
+$successMessage="";
 
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+    //GET METODO MOSTRAR CATEGORIA
+
+    if( !isset($_GET['idCategoria'])) {
+        header("location: Categoria_add.php");
+        exit;
+    }
+
+    $idCategoria = $_GET['idCategoria'];
+
+    $consulta = "SELECT * FROM categorias WHERE idCategoria = $idCategoria";
+    $resultado= $con ->query($consulta);
+    $fila = $resultado->fetch_assoc();
+
+        if(!$fila){
+            header("location: Categoria_add.php");
+            exit;
+        }
+
+        $categoria   $fila=["categoria"];
+        $descripcion $fila=["descripcion"];
+
+}else{
+    $idCategoria = $_POST['idCategoria'];
     $categoria   = $_POST["categoria"];
     $descripcion = $_POST["descripcion"];
     $idUsuario   = $_SESSION['userNow'][0];
+
     do{
-        if ( empty($categoria) || empty($descripcion) ){
+        if ( empy($idCategoria) || empty($categoria) || empty($descripcion) ){
             $errorMessage = "Todos los campos son requeridos";
             break;
         }
-            //agregamos nueva categoria a database
-            $consulta = "INSERT INTO categorias(Categoria,Descripcion,FK_Usuario,Estatus) VALUES ('$categoria','$descripcion','$idUsuario', 1)";
+            //agregamos la modificacion categoria a database
+            $consulta = "UPDATE categorias set Categoria = '$categoria',Descripcion = '$descripcion', FK_Usuario = '$idUsuario',Estatus = 1" .
+                        "WHERE idCategoria = $idCategoria";
+
             $resultado= $con ->query($consulta);
 
             if(!$resultado){
@@ -33,18 +58,16 @@ require_once("../../Model/Conexion.php");
                 break;
             }
 
-            $categoria    ="";
-            $descripcion  ="";
-
-            $successMessage = "Categoria agregada correctamente";
+            $successMessage = "Categoria modificada correctamente";
 
             header("location: Categoria_add.php");
             exit;
 
-    }while(false);
- }
+    }while(true);
+}  
+
 ?>
-<?php require_once("../../Model/Conexion.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,6 +123,7 @@ require_once("../../Model/Conexion.php");
             ?>
 
         <form method="post">
+            <input type="hidden" id ="idCategoria" value="<?php echo $idCategoria; ?>">
            <div class="row mb-3">
               <label class="col-sm-3 col-form-label"><b>Categoría</b></label>
               <div class="col-sm-6"> 
