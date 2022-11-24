@@ -6,13 +6,14 @@ class ProductoDao{
 
     function __construct()
     {   
-        $this->url='https://apiproductos.zambiaa.com/api/productos';
+        $this->url='https://apiproductos.zambiaa.com/api/productos/';
+        $this->url2='https://apiproductos.zambiaa.com/api/productos';
         $this->ch=curl_init();
     }
 
     public function agregar($data_array){
         $data=http_build_query($data_array);
-        curl_setopt($this->ch,CURLOPT_URL,$this->url);
+        curl_setopt($this->ch,CURLOPT_URL,$this->url2);
         curl_setopt($this->ch,CURLOPT_POST,true);
         curl_setopt($this->ch,CURLOPT_POSTFIELDS,$data);
         curl_setopt($this->ch,CURLOPT_RETURNTRANSFER,true);
