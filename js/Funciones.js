@@ -1,7 +1,7 @@
 function salir(){
     $.ajax({
         type:'POST', //aqui puede ser igual get
-        url: 'http://localhost:82/Proyecto%20Capa%20Intermedia/Proyecto_Capa_Intermedia/Controller/FuncionesExecute.php',//aqui va tu direccion donde esta tu funcion php
+        url: '../Controller/FuncionesExecute.php',//aqui va tu direccion donde esta tu funcion php 
         data: {opc:1,process:true},//aqui tus datos
         success:function(data){
             //var datos=JSON.parse(data);

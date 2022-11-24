@@ -26,6 +26,7 @@ function CerrarSession(){
     
     if(session_status()==PHP_SESSION_ACTIVE){
         session_destroy();
+        
         echo json_encode('Sesion cerrada');
     }else{
         echo json_encode("No hay session activa");
@@ -39,6 +40,7 @@ function datosUserNow(){
 }
 
 function modificar(){
+    //session_start();
     $userDao=new UsuarioDao();
     $_id=$_SESSION['userNow'][0];
     $Mssage="";

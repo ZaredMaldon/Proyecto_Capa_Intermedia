@@ -8,7 +8,7 @@
     <title>MAZED</title>
     <!-- CSS only -->
     <link rel="shortcut icon" href="img/logo1.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="css/PaginaPrincipal.css">
+    <link rel="stylesheet" href="css/PaginaPrincipa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
- 
+
 
     <header>
         
@@ -25,8 +25,9 @@
             <a href="index.php">Inicio</a>
             <a href="View/Compras.php">Compra</a>
             <a href="View/Consulta_ventas.php">Ventas</a>
-            <a href="View/carrito/Carrito.php">Carrito</a>
+            <a href="View/carrito/carrito.php">Carrito</a>
             <a href="View/Consulta_pedidos.php">pedidos</a>
+            <a href="#section6">Cotizaciones</a>
             <?php
             session_start();
             if(isset($_SESSION['userNow'])){
@@ -144,6 +145,46 @@
                 </div>
             </div>
         </section>
+        <section id="section6" class="contact">
+            <div class="contact100-form-title container">
+                <h3>Solicita tus</h3>
+                <h2>Cotizaciones</h2>
+                    <form id="form" method="POST" action="Controller/Correos.php" class="contact100-form validate-form">
+
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                            <span class="label-input100">id del producto a cotizar</span>
+                            <input class="input100" type="text" name="productoid" placeholder="Escribe el código del producto de tu interes">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                            <span class="label-input100">Email</span>
+                            <input class="input100" type="text" name="email" placeholder="Escribe tu email">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                            <span class="label-input100">Mensaje</span>
+                            <textarea class="input100" name="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="container-contact100-form-btn">
+                            <button class="contact100-form-btn" id="EnviarCorreo">
+                                <span>
+                                    Enviar
+                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="container-contact100-form-btn response" style="margin-top: 30px;">
+                            <p class="error">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+        </section>
     </main>
 
     <footer>
@@ -170,12 +211,8 @@
     </footer>
         <!-- JavaScript-->
         <script src="Script/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-       
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
-            
-        </script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/SweetAlert.js"></script>
         <script src="js/Funciones.js"></script>
         
         

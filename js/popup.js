@@ -31,6 +31,7 @@ function mostrarPopup2(id){
                 //div.removeChild(child);
                 div.innerHTML+=`
                 <div></div>
+                <h4>id:${dato['id']}</h4>
                 <label >Nombre:</label>
                 <input type="text" value="${dato['Nombre']}" name="nombre" placeholder="Nombre"></br>
                 <label >Precio:</label>
@@ -74,7 +75,7 @@ function cambiarDatosUser(){
             e.preventDefault();
             var datos=new FormData(formulario);
             //var array={datos:datos,opc:3};
-            console.log(datos.get("foto"));
+            //console.log(datos.get("foto"));
             
             fetch('../Controller/FuncionesExecute.php',{
                 method:'POST',
@@ -82,9 +83,8 @@ function cambiarDatosUser(){
             })
             .then(res=>res.json())
             .then(data=>{
-                alert("Modificado");
                 quitarPopup();
-                location.reload();
+                alertaSweetSucces2("Modificado con exito","Se ha modificado su usuario","",true);
             })
         });
         return false;
