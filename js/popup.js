@@ -2,7 +2,7 @@ var btncerrar=document.getElementById("btnCerrarP");
 var formulario=document.getElementById("ModificarUsuario");
 var div=document.getElementById("datos");
 
-$('#file-input').change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
+$('#file-input').change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verÃ¡ reflejado.
     readURL(this,'#imagenPopup');
 });
 function mostrarPopup(){
@@ -24,8 +24,7 @@ function mostrarPopup2(id){
     url: '../Controller/Productos/Mostrar_id.php',//aqui va tu direccion donde esta tu funcion php
     data: {opc:id,process:true},//aqui tus datos
     success:function(data){
-        var datos=JSON.parse(data);
-        datos.forEach(dato => {
+        var datos=JSON.parse(data);       datos.forEach(dato => {
             if(dato['id']==id){
                 //div.removeChild(child);
                 div.innerHTML+=`

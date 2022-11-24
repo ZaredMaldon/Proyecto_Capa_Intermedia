@@ -34,12 +34,13 @@ session_start();
       <?php
       if ($_SESSION['userNow'][4] == 1) { //vendedor
       ?>
-        <a href="Consulta_ventas.html">Ventas</a>
+        <a href="Consulta_ventas.php">Ventas</a>
       <?php }
       if ($_SESSION['userNow'][4] == 2) { //cliente 
       ?>
-        <a href="Consulta_pedidos.html">Compras</a>
+        <a href="Consulta_pedidos.php">Compras</a>
       <?php } ?>
+      <a href="lista.php">Listas</a>
       <a href="Perfil Usuario.php"><?php echo $_SESSION['userNow'][1] ?></a>
       <a href="Login.html" id="Login-btn" class="link">Login</a>
     </nav>
@@ -119,10 +120,10 @@ session_start();
     <div class="overlay"></div>
     <div class="content">
       <div class="close-btn" id="btnCerrarP" onclick="quitarPopup2()">&times;</div>
-      <h1>Modifica los datos</h1>
-      <form id="Productos_Update" method="POST">
+      
+       <h1>Modifica los datos</h1>
+       <form id="Productos_Update" method="POST">
         <div id="datos">
-
         </div>
         <input type="submit" value="Modificar" class="button" id="Modibtn">
         <?php 
