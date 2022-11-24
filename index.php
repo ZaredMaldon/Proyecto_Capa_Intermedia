@@ -24,9 +24,11 @@
             
             <a href="index.php">Inicio</a>
             <a href="View/Compras.php">Compra</a>
-            <a href="View/Consulta_ventas.php">Ventas</a>
-            <a href="View/Carrito.php">Carrito</a>
-            <a href="View/Consulta_pedidos.php">pedidos</a>
+            <a href="View/Consulta_ventas.html">Ventas</a>
+            <a href="View/Carrito.html">Carrito</a>
+            <a href="View/Consulta_pedidos.html">pedidos</a>
+           
+
             <?php
             session_start();
             if(isset($_SESSION['userNow'])){

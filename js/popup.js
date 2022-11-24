@@ -26,6 +26,7 @@ function mostrarPopup2(id){
     success:function(data){
         var datos=JSON.parse(data);
         datos.forEach(dato => {
+            console.log(dato);
             if(dato['id']==id){
                 //div.removeChild(child);
                 div.innerHTML+=`
@@ -63,7 +64,6 @@ function mostrarPopup2(id){
 }
 
 function quitarPopup2(){
-    
     document.getElementById("popup-2").classList.toggle("active");
 }
 
