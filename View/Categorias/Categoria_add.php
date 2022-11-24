@@ -1,4 +1,4 @@
-
+<?php require_once("../../Model/Conexion.php");?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +56,7 @@
               </thead>
                 <tbody>
                     <?php 
-                                            
+
                     ?>
                     <tr>
                         <td></td>
