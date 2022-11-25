@@ -31,12 +31,13 @@ function mostrarPopup2(id){
                 div.innerHTML+=`
                 <div></div>
                 <h4>id:${dato['id']}</h4>
+                <input type="text" value="${dato['id']}" name="id" style="display:none;"></input>
                 <label >Nombre:</label>
                 <input type="text" value="${dato['Nombre']}" name="nombre" placeholder="Nombre"></br>
                 <label >Precio:</label>
                 <input type="text" value="${dato['Precio']}" name="Precio" placeholder="Precio"></br>
                 <label >Categoria:</label>
-                <select id="categoria">
+                <select id="categoria" name="categoria">
                     <option value="1">Categoria 1</option>
                     <option value="2">Otra categoria</option>
                 </select></br>

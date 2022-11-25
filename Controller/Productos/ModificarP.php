@@ -3,12 +3,13 @@ require_once('../ProductosDAO.php');
 $productosDao=new ProductoDao();
 $Imagen=null;
 $Video=null;
+$id=$_POST['id'];
 $Nombre=$_POST['nombre'];
 $Precio=$_POST['Precio'];
 $Categoria=$_REQUEST['categoria'];
 $Cantidad=$_POST['Cantidad'];
 $Valoracion=$_POST['Valoracion'];
-$id=$_GET['id'];
+
 
 $array=array(
     'Nombre'=>$Nombre,

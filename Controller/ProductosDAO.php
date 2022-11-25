@@ -59,7 +59,7 @@ class ProductoDao{
             echo json_encode($e);
         }else{
             $decoded=json_decode($respuesta);
-            print_r($decoded);
+            echo($respuesta);
         }
         curl_close($this->ch);
     }

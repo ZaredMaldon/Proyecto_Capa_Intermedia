@@ -56,9 +56,7 @@ function alertaSweetSucces2(titulo,mensaje,direccionamiento){
 }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-      if(direccionamiento){
-        location.reload;
-      }
+      return direccionamiento;
       
     } 
   });
