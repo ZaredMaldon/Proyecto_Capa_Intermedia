@@ -31,6 +31,7 @@ session_start();
     <nav>
       <a href="../index.php">Inicio</a>
       <a href="../View/carrito/carrito.php">Carrito</a>
+      <a href="../View/Categorias/Categoria_add.php">Caregoria</a>
       <?php
       if ($_SESSION['userNow'][4] == 1) { //vendedor
       ?>

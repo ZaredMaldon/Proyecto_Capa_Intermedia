@@ -23,10 +23,11 @@
         <nav>
             
             <a href="index.php">Inicio</a>
+            <a href="View/Categorias/Categoria_add.php">Categorias</a>
             <a href="View/Compras.php">Compra</a>
             <a href="View/Consulta_ventas.php">Ventas</a>
             <a href="View/carrito/carrito.php">Carrito</a>
-            <a href="View/Consulta_pedidos.php">pedidos</a>
+            <a href="View/Consulta_pedidos.php">Pedidos</a>
             <a href="#section6">Cotizaciones</a>
             <?php
             session_start();

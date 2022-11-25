@@ -27,7 +27,7 @@
     <nav>
         <a href="../../index.php">Inicio</a>
        <!-- agregar el inicio de sesion despues -->
-        <a id="Salir-btn" name="SalirBtn" class="link" action="../Login.html">Cerrar Sesion</a>
+        <a id="Salir-btn" name="SalirBtn" class="link" href="../Login.html">Cerrar Sesion</a>
         <?php session_start(); ?>
     </nav>
 
