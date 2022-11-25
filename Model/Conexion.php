@@ -11,7 +11,7 @@
             try{
                 $user="u840845621_root";
                 //$password="Zomrromr28122801";
-                $password="v:F|C1r6W#";
+                $password="Ii23456*";
                 $server="31.170.160.1";
                 $DataBase="u840845621_pw_cintermedia";
 

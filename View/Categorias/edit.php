@@ -1,11 +1,11 @@
 <?php require_once("../../Model/Conexion.php");
-
+  session_start();
+ 
     //conexión
     $conexion=new Conectar();
     $con=$conexion->conectar(); 
 
 //Variables
-$idCategoria  ="";
 $categoria    ="";
 $descripcion  ="";
 $Usuario      ="";
@@ -13,43 +13,45 @@ $Usuario      ="";
 $errorMessage ="";
 $successMessage="";
 
+
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     //GET METODO MOSTRAR CATEGORIA
 
-    if( !isset($_GET['idCategoria'])) {
+    if( !isset($_GET["idCategoria"])) {
         header("location: Categoria_add.php");
         exit;
     }
 
-    $idCategoria = $_GET['idCategoria'];
+    $idCategoria = $_GET["idCategoria"];
+    $idUsuario   = $_SESSION['userNow'][0];
 
     $consulta = "SELECT * FROM categorias WHERE idCategoria = $idCategoria";
     $resultado= $con ->query($consulta);
-    $fila = $resultado->fetch_assoc();
-
-        if(!$fila){
+    $row = $resultado->fetch_assoc();
+    
+   /*  print_r(json_encode($row)); */
+        if(!$row){
             header("location: Categoria_add.php");
             exit;
         }
 
-        $categoria   $fila=["categoria"];
-        $descripcion $fila=["descripcion"];
+        $categoria  = $row["Categoria"];
+        $descripcion = $row["Descripcion"];
 
 }else{
-    $idCategoria = $_POST['idCategoria'];
+    $idCategoria = $_POST["idCategoria"];
     $categoria   = $_POST["categoria"];
     $descripcion = $_POST["descripcion"];
     $idUsuario   = $_SESSION['userNow'][0];
 
     do{
-        if ( empy($idCategoria) || empty($categoria) || empty($descripcion) ){
+        if ( empty($idCategoria) || empty($categoria) || empty($descripcion) ){
             $errorMessage = "Todos los campos son requeridos";
             break;
         }
             //agregamos la modificacion categoria a database
-            $consulta = "UPDATE categorias set Categoria = '$categoria',Descripcion = '$descripcion', FK_Usuario = '$idUsuario',Estatus = 1" .
-                        "WHERE idCategoria = $idCategoria";
+            $consulta = "UPDATE categorias SET Categoria = '$categoria',Descripcion = '$descripcion', FK_Usuario = '$idUsuario',Estatus = 1 WHERE idCategoria = $idCategoria";
 
             $resultado= $con ->query($consulta);
 
@@ -108,7 +110,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     <h4 class="mb-3"><b>CATEGORIAS</b></h4>
 
     <div class=container my-5>
-           <h5 class="mb-3">Agregar categoría</h5>
+           <h5 class="mb-3">Modificar categoría</h5>
            <!-- MSG DE FALLO, LLENAR DATOS -->
             <?php 
             if( !empty($errorMessage)){
@@ -123,17 +125,17 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
             ?>
 
         <form method="post">
-            <input type="hidden" id ="idCategoria" value="<?php echo $idCategoria; ?>">
+            <input type="hidden" name="idCategoria" value="<?php echo $idCategoria; ?>">
            <div class="row mb-3">
               <label class="col-sm-3 col-form-label"><b>Categoría</b></label>
               <div class="col-sm-6"> 
-                <input type="text" class="form-control" placeholder="Nombre de categoría" name="categoria" value="<?php echo $categoria; ?>">
+                <input type="text" class="form-control" name="categoria" value="<?php echo $categoria; ?>">
               </div>
            </div>
            <div class="row mb-3">
               <label class="col-sm-3 col-form-label"><b>Descripción</b></label>
               <div class="col-sm-6"> 
-                <input type="text" class="form-control" placeholder="Descripción" name="descripcion" value="<?php echo $descripcion; ?>">
+                <input type="text" class="form-control" name="descripcion" value="<?php echo $descripcion; ?>">
               </div>
            </div>
 

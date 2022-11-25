@@ -8,7 +8,7 @@ require_once("../../Model/Conexion.php");
 //Variables
  $categoria    ="";
  $descripcion  ="";
- $Usuario      ="";
+ $idUsuario    ="";
  $errorMessage ="";
  $successMessage="";
  //SI los datos de han transmitido por el método post 

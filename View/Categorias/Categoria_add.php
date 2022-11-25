@@ -44,7 +44,7 @@
 
             <h2>Lista de categorías</h2>
             <a class="btn btn-success" href="create.php" role="button">Agregar</a>
-            <br>
+            <br> 
             <table class="table">
               <thead>
                  <tr>
@@ -77,8 +77,8 @@
                                     <td>$fila[Descripcion]</td>
                                     <td>$fila[Usuario]</td>                       
                                     <td>
-                                        <a class='btn btn-primary btn-sm' href='edit.php?id=$fila[idCategoria]'>Editar</a>
-                                        <a class='btn btn-danger btn-sm' href='delete.php?=$fila[idCategoria]'>Eliminar</a>
+                                        <a class='btn btn-primary btn-sm' href='edit.php?idCategoria=$fila[idCategoria]'>Editar</a>
+                                        <a class='btn btn-danger btn-sm' href='delete.php?idCategoria=$fila[idCategoria]'>Eliminar</a>
                                     </td>
                                     </tr>
                                 "; 
