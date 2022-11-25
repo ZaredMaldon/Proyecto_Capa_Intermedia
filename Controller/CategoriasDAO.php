@@ -16,7 +16,7 @@ class CategoriaDao{
         try{
            
             $msql=$this->conexion;
-            $execute=$msql->query("CALL sp_categorias(1, null,'{$Categoria}','{$Descripcion}',{$USUARIO});");
+            $execute=$msql->query("CALL sp_categorias(1, null,'{$Categoria}','{$Descripcion}',{$USUARIO});"); 
             if($execute){
                 echo json_encode("1");
             }else{
