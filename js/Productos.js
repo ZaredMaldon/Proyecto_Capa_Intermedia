@@ -16,7 +16,7 @@ formRegistro.addEventListener("submit",function (e) {
         //alert("Modificado");
         console.log(data);
         if(data){
-            alert('Producto agregado con exito');
+            alertaSweetSucces('Enhorabuena!','Agregado con Exito','../View/Compras.php',true);
         }
     })
 
@@ -35,24 +35,11 @@ formUpdate.addEventListener("submit",function(e){
     .then(data=>{
         //alert("Modificado");
         console.log(JSON.stringify(data));
+        alertaSweetSucces('Enhorabuena!','Modificado con Exito','../View/Compras.php',true);
         /* if(data){
             alert('Producto agregado con exito');
         } */
     })
-
-   /*  $.ajax({
-        method: "POST",
-        url: "../Controller/Productos/ModificarP.php?id="+localStorage.getItem('id'),
-        data:datos,
-        processData: false,
-        contentType: false
-    })
-        .done(function( res ) {
-            console.log(res);
-            if(res==="1"){
-                alert("Modificado con exito!");
-            }
-        }); */
 });
 
 
